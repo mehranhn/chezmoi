@@ -1,0 +1,41 @@
+gui:
+  nerdFontsVersion: "3"
+  theme:
+    # Border color of focused window
+    activeBorderColor:
+      - white
+      - bold
+
+    # Border color of non-focused windows
+    inactiveBorderColor:
+      - green
+
+    # Background color of selected line.
+    # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#highlighting-the-selected-line
+    selectedLineBgColor:
+      - default
+keybinding:
+  universal:
+    prevItem-alt: 'e'
+    nextItem-alt: 'n'
+    scrollLeft: 'H' # scroll left within list view
+    scrollRight: 'I' # scroll right within list view
+    prevBlock-alt: 'h'
+    nextBlock-alt: 'i'
+    nextMatch: ','
+    prevMatch: '.'
+    new: 'j'
+    edit: 'k'
+    openFile: 'o'
+    scrollUpMain-alt1: 'E'
+    scrollDownMain-alt1: 'N'
+    scrollUpMain-alt2: '<c-u>'
+    scrollDownMain-alt2: '<c-e>'
+  files:
+    ignoreFile: 'I'
+  commits:
+    moveDownCommit: '<c-n>'
+    moveUpCommit: '<c-e>'
+  branches:
+    viewGitFlowOptions: 'I'
+    setUpstream: 'U'
