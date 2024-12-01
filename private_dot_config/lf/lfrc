@@ -1,0 +1,163 @@
+# Note on Image Previews
+# For those wanting image previews, like this system, there are four steps to
+# set it up. These are done automatically for LARBS users, but I will state
+# them here for others doing it manually.
+#
+# 1. ueberzug must be installed.
+# 2. The scope file (~/.config/lf/scope for me), must have a command similar to
+#    mine to generate ueberzug images.
+# 3. A `set cleaner` line as below is a cleaner script.
+# 4. lf should be started through a wrapper script (~/.local/bin/lfub for me)
+#    that creates the environment for ueberzug. This command can be be aliased
+#    in your shellrc (`alias lf="lfub") or if set to a binding, should be
+#    called directly instead of normal lf.
+
+# Basic vars
+set shellopts '-eu'
+set ifs "\n"
+set scrolloff 10
+set icons
+set period 1
+set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
+set cleaner '~/.config/lf/cleaner'
+set previewer '~/.config/lf/scope'
+set promptfmt "\033[32;1m%u@%h\033[0m:\033[34;1m%d\033[0m\033[1m%f\033[0m"
+
+# cmds/functions
+cmd open ${{
+	case $(file --mime-type "$(readlink -f $f)" -b) in
+        application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
+        image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f zathura $fx >/dev/null 2>&1 ;;
+        text/*|application/json|inode/x-empty) $EDITOR $fx;;
+        image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
+        image/svg+xml) display -- $f ;;
+        image/*) setsid -f imv $fx >/dev/null 2>&1 ;;
+        audio/*) mcontrol mpv --audio-display=no $fx ;;
+        video/*) setsid -f mcontrol mpv -quiet $fx >/dev/null 2>&1 ;;
+        application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+        application/pgp-encrypted) $EDITOR $fx ;;
+        *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
+	esac
+}}
+
+cmd bulkrename ${{
+    if [ -z "$fs" ]; then
+        vidir
+    else
+        printf "%s\n" "$fs" | vidir -
+    fi
+}}
+
+cmd metadata_show $mat2 -s "$fx" 2>/dev/null | bat --pager less --paging always
+cmd metadata_clean ${{
+    clear
+	printf "%s\n\t" "$fx"
+	printf "clean metadata?[y/N]"
+	read ans
+    [ $ans = "y" ] && mat2 --inplace "$fx"
+}}
+
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
+cmd extract ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "extract?[y/N]"
+	read ans
+	[ $ans = "y" ] && aunpack $fx
+}}
+
+cmd dragon-drag ${{
+    dragon-drop -x -A -T $fx 2> /dev/null &
+}}
+
+cmd dragon-drag-target ${{
+    cp $(dragon-drop -x -t -T -p $PWD) $PWD 2> /dev/null &
+}}
+
+# cmd extract ${{
+#     set -f
+#     case $f in
+#         *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+#         *.tar.gz|*.tgz) tar xzvf $f;;
+#         *.tar.xz|*.txz) tar xJvf $f;;
+#         *.zip) unzip $f;;
+#         *.rar) unrar x $f;;
+#         *.7z) 7z x $f;;
+#     esac
+# }}
+
+# compress current file or selected files with tar and gunzip
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+
+# compress current file or selected files with zip
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+
+cmd cpy ${{
+    if [ -z "$fs" ]; then
+        printf "%s" "$(basename $f)" | xclip -selection clipboard 2> /dev/null && exit 0
+        printf "%s" "$(basename $f)" | wl-copy 2> /dev/null && exit 0
+    else
+        printf "%s\n" "$(basename $fs)" | xclip -selection clipboard 2> /dev/null && exit 0
+        printf "%s\n" "$(basename $fs)" | wl-copy 2> /dev/null && exit 0
+    fi
+    exit 1
+}}
+
+# Bindings
+map n down
+map e up
+map i open
+map I dragon-drag
+map U dragon-drag-target
+map N push nnnnn
+map E push eeeee
+map , search-next
+map . search-prev
+map D delete
+map B extract
+map <c-n> push :mkdir<space>
+map <c-r> reload
+map <enter> shell
+map x $$f
+map X !$f
+map o $mimeopen $f
+map O $mimeopen --ask $f
+map C clear
+
+map V bulkrename
+
+map j metadata_show
+map J metadata_clean
+
+map A rename # at the very end
+map c push A<c-u> # new rename
+map K push A<c-a> # at the very beginning
+map k push A<a-b><a-b><a-f> # before extention
+map a push A<a-b> # after extention
+
+map gf cd /.files
+map gc cd ~/.config
+map gS cd ~/.src
+map gm cd ~/Videos/Movies
+map gs cd ~/Videos/Shows
+map gM cd /run/media
+#map W $setsid -f $TERMINAL >/dev/null 2>&1
+
+map Y cpy
+
+# Source Bookmarks
+#source "~/.config/lf/shortcutrc"
