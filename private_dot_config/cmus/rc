@@ -1,0 +1,16 @@
+set mpris=false
+set start_view=playlist
+colorscheme night
+
+bind -f common < search-next
+bind -f common > search-prev
+
+bind -f common n win-down
+bind -f common e win-up
+bind -f common i seek +5
+
+bind -f common k win-sel-cur
+bind -f browser k toggle show_hidden
+
+bind -f common ^N win-mv-after
+bind -f common ^E win-mv-before
