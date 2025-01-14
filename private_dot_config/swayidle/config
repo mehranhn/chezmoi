@@ -1,0 +1,3 @@
+timeout 570 "dunstify -r 10000 -u critical -t 30000 -a 'swayidle' 'locking the system in 30s'" resume "dunstify -C 10000"
+timeout 600 "swaylock"
+timeout 1200 "wlopm --off '*'" resume "wlopm --on '*'"
