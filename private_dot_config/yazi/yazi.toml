@@ -1,0 +1,40 @@
+[manager]
+ratio = [1, 4, 3]
+sort_by = "natural"
+sort_dir_first = true
+linemode = "size"
+show_symlink = false
+
+[plugin]
+prepend_previewers = [
+	# Archive previewer
+	{ mime = "application/*zip",            run = "ouch" },
+	{ mime = "application/x-tar",           run = "ouch" },
+	{ mime = "application/x-bzip2",         run = "ouch" },
+	{ mime = "application/x-7z-compressed", run = "ouch" },
+	{ mime = "application/x-rar",           run = "ouch" },
+	{ mime = "application/x-xz",            run = "ouch" },
+	{ mime = "*.md",                        run = "glow" },
+	{ mime = "text/csv",                    run = "miller"},
+	{ mime = "audio/*",                     run = "exifaudio"},
+]
+
+[opener]
+custom-play = [
+	{ run = 'mcontrol mpv --force-window -quiet "$@"', orphan = true, for = "unix" },
+]
+
+pdff = [
+	{ run = 'zathura "$@"', desc = "zathura", orphan = true, block = false, for = "unix" },
+]
+
+add-sub = [
+	{ run  = ''' echo sub-add "'$0'" | socat - /tmp/mpv.sock ''', desc = "Add sub to MPV" },
+]
+
+[open]
+prepend_rules = [
+	{ mime = "application/pdf", use = [ "pdff", "reveal" ] },
+	{ name = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "add-sub", "edit" ]},
+	{ mime = "{audio,video}/*", use = [ "custom-play", "play", "reveal" ] },
+]

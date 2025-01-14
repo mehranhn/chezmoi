@@ -1,0 +1,5 @@
+[plugin]
+deps = [{ use = "Sonico98/exifaudio", rev = "6205460" }, { use = "Reledia/glow", rev = "5ce76dc" }, { use = "Reledia/miller", rev = "40e0265" }, { use = "ndtoan96/ouch", rev = "083d564" }, { use = "imsi32/yatline", rev = "9328205" }, { use = "imsi32/yatline-catppuccin", rev = "dc575da" }]
+
+[flavor]
+deps = []
