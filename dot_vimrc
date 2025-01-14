@@ -1,0 +1,155 @@
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+let mapleader = " "
+
+colorscheme default
+
+set nobackup
+set clipboard=unnamedplus
+set cmdheight=2
+set completeopt=menuone,noselect
+set conceallevel=0
+set fileencoding=utf-8
+set hlsearch
+set ignorecase
+set mouse=a
+set pumheight=10
+set showmode
+set nosmartcase
+set smartindent
+set splitbelow
+set splitright
+set noswapfile
+set termguicolors
+set timeoutlen=750
+set ttimeoutlen=5
+set undofile
+set updatetime=300
+set nowritebackup
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set number
+set relativenumber
+set numberwidth=4
+set signcolumn=yes
+set nowrap
+set scrolloff=8
+set sidescrolloff=8
+set listchars=tab:▷▷⋮
+
+noremap <silent> <Space> <Nop>
+
+nnoremap k i
+xnoremap k i
+onoremap k i
+
+nnoremap K I
+xnoremap K I
+onoremap K I
+
+nnoremap i <Nop>
+xnoremap i <Nop>
+onoremap i <Nop>
+
+nnoremap I <Nop>
+xnoremap I <Nop>
+onoremap I <Nop>
+
+nnoremap l <Nop>
+xnoremap l <Nop>
+onoremap l <Nop>
+
+nnoremap L <Nop>
+xnoremap L <Nop>
+onoremap L <Nop>
+
+nnoremap j <Nop>
+xnoremap j <Nop>
+onoremap j <Nop>
+
+nnoremap J <Nop>
+xnoremap J <Nop>
+onoremap J <Nop>
+
+nnoremap <silent> U <CMD>redo<CR>
+nnoremap <silent> , n
+nnoremap <silent> . N
+
+
+nnoremap n <Down>
+xnoremap n <Down>
+onoremap n <Down>
+
+nnoremap e <Up>
+xnoremap e <Up>
+onoremap e <Up>
+
+nnoremap i <Right>
+xnoremap i <Right>
+onoremap i <Right>
+
+nnoremap H ^
+xnoremap H ^
+onoremap H ^
+nnoremap N 5<Down>
+xnoremap N 5<Down>
+onoremap N 5<Down>
+nnoremap E 5<Up>
+xnoremap E 5<Up>
+onoremap E 5<Up>
+nnoremap I <END>
+xnoremap I <END>
+onoremap I <END>
+
+nnoremap <silent> <A-h>, <C-w>h
+nnoremap <silent> <A-n> <C-w>j
+nnoremap <silent> <A-e> <C-w>k
+nnoremap <silent> <A-i> <C-w>l
+
+nnoremap <silent> <C-Up> :resize -2<CR>
+nnoremap <silent> <C-Down> :resize +2<CR>
+nnoremap <silent> <C-Left> :vertical resize -2<CR>
+nnoremap <silent> <C-Right> :vertical resize +2<CR>
+
+nnoremap <silent> <Tab> <CMD>bnext<CR>
+nnoremap <silent> <S-Tab> <CMD>bprevious<CR>
+
+nnoremap <silent> <C-n> :m .+1<CR>
+nnoremap <silent> <C-e> :m .-2<CR>
+
+xnoremap <silent> <C-n> :move '>+1<CR>gv-gv
+xnoremap <silent> <C-e> :move '<-2<CR>gv-gv
+xnoremap <silent> <Tab> >gv
+xnoremap <silent> <S-Tab> <gv
+
+nnoremap <silent> <C-p> "ap
+xnoremap <silent> <C-p> "ap
+
+nnoremap <silent> <C-P> "aP
+xnoremap <silent> <C-P> "aP
+
+nnoremap <silent> d "ad
+xnoremap <silent> d "ad
+
+nnoremap <silent> D "aD
+xnoremap <silent> D "aD
+
+nnoremap <silent> c "ac
+xnoremap <silent> c "ac
+
+nnoremap <silent> C "aC
+xnoremap <silent> C "aC
+
+nnoremap <silent> x "ax
+xnoremap <silent> x "ax
+
+nnoremap <silent> X "aX
+xnoremap <silent> X "aX
+
+cnoremap <silent> <C-p> <C-r>\
+
+nnoremap <silent> <leader>w <CMD>w<CR>
+nnoremap <silent> <leader>q <CMD>q<CR>
+
+noremap Q @q
