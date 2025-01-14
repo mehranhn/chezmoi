@@ -1,0 +1,43 @@
+set sandbox none
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+set selection-clipboard clipboard
+
+map h scroll left
+map n scroll down
+map e scroll up
+map i scroll right
+map N navigate next
+map E navigate previous
+map . search next item
+map , search previous item
+map D toggle_page_mode
+map r reload
+map R rotate
+map I recolor
+map p print
+map g goto top
+map f toggle_fullscreen
+map x zoom in
+map z zoom out
+map Z zoom reset
+
+map [fullscreen] h scroll left
+map [fullscreen] n scroll down
+map [fullscreen] e scroll up
+map [fullscreen] i scroll right
+map [fullscreen] N navigate next
+map [fullscreen] E navigate previous
+map [fullscreen] . search next item
+map [fullscreen] , search previous item
+map [fullscreen] D toggle_page_mode
+map [fullscreen] r reload
+map [fullscreen] I recolor
+map [fullscreen] R rotate
+map [fullscreen] p print
+map [fullscreen] g goto top
+map [fullscreen] f toggle_fullscreen
+map [fullscreen] x zoom in
+map [fullscreen] z zoom out
+map [fullscreen] Z zoom reset
