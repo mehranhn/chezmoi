@@ -24,7 +24,7 @@ export PATH="$PATH:$HOME/.local/bin"
 # export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share"
 # export XDG_DATA_DIRS="$XDG_DATA_DIRS:/home/mhn/.local/share/flatpak/exports/share"
 export LANG="en_US.UTF-8"
-export GPG_TTY="$(tty)"
+# export GPG_TTY="$(tty)"
 
 #if !SYSTEMD
 # pipewire &
