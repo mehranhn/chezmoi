@@ -19,4 +19,4 @@ alias sshd='ssh-add -d'
 alias otp='pass otp -c'
 alias rsync="rsync --exclude='.git/'"
 alias drsync="rsync --exclude='.git/' --delete"
-# alias dwr="$HOME/.local/bin/dwr"
+alias dwr="$HOME/.local/bin/dwr"
