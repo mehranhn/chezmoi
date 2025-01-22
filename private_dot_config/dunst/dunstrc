@@ -27,13 +27,13 @@
     width = 300
 
     # The maximum height of a single notification, excluding the frame.
-    height = 150
+    height = 70
 
     # Position the notification in the top right corner
     origin = top-right
 
     # Offset from the origin
-    offset = 5x20
+    offset = (20, 20)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -210,7 +210,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/bemenu -p dunst:
+    dmenu = /usr/bin/tofi --prompt-text dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open
