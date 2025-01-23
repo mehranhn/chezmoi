@@ -6,8 +6,17 @@ linemode = "size"
 show_symlink = false
 
 [plugin]
+prepend_fetchers = [
+    { id = "mime", if = "!(mime|dummy)", name = "*", run = "mime-ext", prio = "high" }
+]
+
+preloaders = [
+  { name = "/home/mhn/Android/**/*", run = "noop" },
+]
+
 prepend_previewers = [
 	# Archive previewer
+    { name = "/home/mhn/Android/**/*",      run = "noop" },
 	{ mime = "application/*zip",            run = "ouch" },
 	{ mime = "application/x-tar",           run = "ouch" },
 	{ mime = "application/x-bzip2",         run = "ouch" },
