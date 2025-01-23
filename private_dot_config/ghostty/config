@@ -1,0 +1,6 @@
+# custom-shader = /home/mhn/.apps/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl
+theme = Tomorrow Night Bright
+background-opacity = 0.8
+window-decoration = false
+window-theme = dark
+window-vsync = true
