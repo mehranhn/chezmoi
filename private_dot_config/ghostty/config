@@ -1,4 +1,4 @@
-# custom-shader = /home/mhn/.apps/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix/crt-shader-with-chromatic-aberration-glow-scanlines-dot-matrix.glsl
+# custom-shader = /home/mhn/.apps/ghostty-shaders/starfield-colors.glsl
 theme = Tomorrow Night Bright
 background-opacity = 0.8
 window-decoration = false
