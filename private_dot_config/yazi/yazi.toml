@@ -16,6 +16,7 @@ preloaders = [
 
 prepend_previewers = [
 	# Archive previewer
+    { name = "*/",                          run = "eza-preview" },
     { name = "/home/mhn/Android/**/*",      run = "noop" },
 	{ mime = "application/*zip",            run = "ouch" },
 	{ mime = "application/x-tar",           run = "ouch" },
