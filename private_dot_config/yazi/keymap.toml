@@ -54,6 +54,7 @@ prepend_keymap = [
 	# Goto
 	{ on = [ "g", "d" ], run = "cd ~/Downloads", desc = "Go to the downloads directory" },
 	{ on = [ "g", "v" ], run = "cd ~/Videos",    desc = "Go to the videos directory" },
+	{ on = [ "g", "f" ], run = "cd /.files",     desc = "Go to the /.files directory" },
 
     # simple-mtpfs plugin
     { on = [ "M", "m" ], run = "plugin simple-mtpfs --args=select-then-mount",   desc = "Select device then mount" },
