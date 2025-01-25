@@ -1,4 +1,5 @@
 [screencast]
+output_name=*
 max_fps=30
 chooser_type=dmenu
-chooser_cmd=bemenu -p Display
+chooser_cmd=tofi --prompt-text Display
