@@ -1,5 +1,5 @@
-launcher = [ "bemenu", "-l", "10" ]
-# launcher = [ "tofi", "--fuzzy-match=true", "--prompt-text=clap: " ]
+# launcher = [ "bemenu", "-l", "10" ]
+launcher = [ "tofi", "--fuzzy-match=true" ]
 # launcher = [ "yofi" ]
 history_size = 50
 
