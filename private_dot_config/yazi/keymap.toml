@@ -56,14 +56,11 @@ prepend_keymap = [
 	{ on = [ "g", "v" ], run = "cd ~/Videos",    desc = "Go to the videos directory" },
 	{ on = [ "g", "f" ], run = "cd /.files",     desc = "Go to the /.files directory" },
 
-    # simple-mtpfs plugin
-    { on = [ "M", "m" ], run = "plugin simple-mtpfs --args=select-then-mount",   desc = "Select device then mount" },
-    { on = [ "M", "u" ], run = "plugin simple-mtpfs --args=select-then-unmount", desc = "Select device then unmount" },
-
-    { on = [ "J" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
-    { on = [ "-" ], run = "plugin eza-preview --args='--inc-level'", desc = "Increment tree level" },
-    { on = [ "_" ], run = "plugin eza-preview --args='--dec-level'", desc = "Decrement tree level" },
-    { on = [ "$" ], run = "plugin eza-preview --args='--toggle-follow-symlinks'", desc = "Toggle tree follow symlinks" },
+    # eza-preview
+    # { on = [ "J" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
+    # { on = [ "-" ], run = "plugin eza-preview --args='--inc-level'", desc = "Increment tree level" },
+    # { on = [ "_" ], run = "plugin eza-preview --args='--dec-level'", desc = "Decrement tree level" },
+    # { on = [ "$" ], run = "plugin eza-preview --args='--toggle-follow-symlinks'", desc = "Toggle tree follow symlinks" },
 ]
 
 [tasks]
