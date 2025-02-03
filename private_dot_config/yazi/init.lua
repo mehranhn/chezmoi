@@ -39,8 +39,3 @@ Header:children_add(function()
 	end
 	return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("green")
 end, 500, Header.LEFT)
-
-require("simple-mtpfs"):setup({
-  mount_point = os.getenv("HOME") .. "/Android",
-  mount_opts = { "debug", "max_read=1000", "auto_unmount" }
-})
