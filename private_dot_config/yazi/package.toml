@@ -1,5 +1,47 @@
-[plugin]
-deps = [{ use = "Sonico98/exifaudio", rev = "6205460" }, { use = "Reledia/glow", rev = "5ce76dc" }, { use = "Reledia/miller", rev = "40e0265" }, { use = "ndtoan96/ouch", rev = "083d564" }, { use = "imsi32/yatline", rev = "9328205" }, { use = "imsi32/yatline-catppuccin", rev = "dc575da" }, { use = "yazi-rs/plugins:smart-enter", rev = "600614a" }, { use = "yazi-rs/plugins:mime-ext", rev = "6418698" }, { use = "ahkohd/eza-preview", rev = "5ef05bc" }]
+[[plugin.deps]]
+use = "Sonico98/exifaudio"
+rev = "6205460"
+hash = "8d2dcb2f571d52bd66780f0d5a7ffe70"
+
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "5ce76dc"
+hash = "52e5f5c602962e7cbf874da28f52ba45"
+
+[[plugin.deps]]
+use = "Reledia/miller"
+rev = "40e0265"
+hash = "2d6d77583162aaf0a599e7a3091b5878"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "083d564"
+hash = "1e4c0ac1fca31a23412324710193358a"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "9328205"
+hash = "3e51d1fd8a2e481fcfa8eab1251d1c5f"
+
+[[plugin.deps]]
+use = "imsi32/yatline-catppuccin"
+rev = "dc575da"
+hash = "3646702e5ffe3f6bd233e66968e8d9c7"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "600614a"
+hash = "c1a2739e9ef2d837030ccb4267be3ed1"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mime-ext"
+rev = "6418698"
+hash = "d81b64a39432fcd6224cd75d296e7510"
+
+[[plugin.deps]]
+use = "ahkohd/eza-preview"
+rev = "5ef05bc"
+hash = "72355a6c8b7c8de6ed4dda0f98f86fee"
 
 [flavor]
 deps = []
