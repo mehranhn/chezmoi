@@ -1,0 +1,9 @@
+fuzzy-match=true
+font=/usr/share/fonts/hack/Hack-Regular.ttf
+font-size=14
+hint-font=false
+late-keyboard-init=true
+ascii-input=true
+border-width=0
+outline-width=0
+background-color=#000A
