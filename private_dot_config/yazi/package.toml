@@ -1,12 +1,12 @@
 [[plugin.deps]]
 use = "Sonico98/exifaudio"
-rev = "d794614"
-hash = "a8e15d3c21c02a5af41d46ed04778a02"
+rev = "7ff7141"
+hash = "666ccba55119fba4c25b8ad354b2855c"
 
 [[plugin.deps]]
 use = "Reledia/glow"
-rev = "5ce76dc"
-hash = "52e5f5c602962e7cbf874da28f52ba45"
+rev = "c76bf4f"
+hash = "a6b78bf9af5390e3a85a6951fbb7b93"
 
 [[plugin.deps]]
 use = "Reledia/miller"
@@ -20,27 +20,27 @@ hash = "ed6c185514109d7c5463f609282b220c"
 
 [[plugin.deps]]
 use = "imsi32/yatline"
-rev = "9328205"
-hash = "3e51d1fd8a2e481fcfa8eab1251d1c5f"
+rev = "6b0fc1e"
+hash = "ab115c6cc77f5710c27f39dfa2f3d4d"
 
 [[plugin.deps]]
 use = "imsi32/yatline-catppuccin"
-rev = "dc575da"
+rev = "8cc4773"
 hash = "fd03fb015a28040bca0c0f9a8fe6fd8d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "781a798"
-hash = "aef2b1a805b80cce573bb766f1459d88"
+rev = "2730199"
+hash = "7918aab6a71caf31b58411f789195677"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mime-ext"
-rev = "781a798"
-hash = "b03f3d80d26b6d7bb490b1380e9cb754"
+rev = "2730199"
+hash = "1f9fc0e55ff859a32e793833403ee7bd"
 
 [[plugin.deps]]
 use = "ahkohd/eza-preview"
-rev = "5ef05bc"
+rev = "6575a9a"
 hash = "72355a6c8b7c8de6ed4dda0f98f86fee"
 
 [flavor]
