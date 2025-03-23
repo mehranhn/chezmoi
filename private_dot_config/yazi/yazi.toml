@@ -11,13 +11,8 @@ prepend_fetchers = [
 ]
 
 prepend_previewers = [
-	{ mime = "application/*zip",            run = "ouch" },
-	{ mime = "application/x-tar",           run = "ouch" },
-	{ mime = "application/x-bzip2",         run = "ouch" },
-	{ mime = "application/x-7z-compressed", run = "ouch" },
-	{ mime = "application/x-rar",           run = "ouch" },
-	{ mime = "application/x-xz",            run = "ouch" },
-	{ mime = "*.md",                        run = "glow" },
+	{ mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", name = "*.{tar.gz,tar.xz}", run = "ouch" },
+	{ name = "*.md",                        run = "glow" },
 	{ mime = "text/csv",                    run = "miller"},
 	{ mime = "audio/*",                     run = "exifaudio"},
 ]
@@ -32,7 +27,11 @@ pdff = [
 ]
 
 add-sub = [
-	{ run  = ''' echo sub-add "'$0'" | socat - /tmp/mpv.sock ''', desc = "Add sub to MPV" },
+	{ run  = '''echo sub-add "'$0'" | socat - /tmp/mpv.sock''', desc = "Add sub to MPV" },
+]
+
+ouch-decompress = [
+	{ run  = '''ouch decompress -y "$@"''', desc = "decompress" },
 ]
 
 [open]
@@ -40,4 +39,5 @@ prepend_rules = [
 	{ mime = "application/pdf", use = [ "pdff", "reveal" ] },
 	{ name = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "add-sub", "edit" ]},
 	{ mime = "{audio,video}/*", use = [ "custom-play", "play", "reveal" ] },
+	{ mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", name = "*.{tar.gz,tar.xz}", use = [ "ouch-decompress", "reveal" ] },
 ]
