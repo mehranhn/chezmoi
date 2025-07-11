@@ -5,6 +5,9 @@ sort_dir_first = true
 linemode = "size"
 show_symlink = false
 
+[preview]
+cache_dir = "~/.cache/yazi/thumbnails"
+
 [plugin]
 prepend_fetchers = [
     { id = "mime", if = "!(mime|dummy)", name = "*", run = "mime-ext", prio = "high" },
