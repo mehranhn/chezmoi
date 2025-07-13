@@ -6,6 +6,14 @@ keybinds clear-defaults=true {
     locked {
         bind "Alt a" { SwitchToMode "normal"; }
     }
+    normal {
+        bind "Alt h" { MoveFocusOrTab "left"; }
+        bind "Alt l" { MoveTab "left"; }
+        bind "Alt n" { MoveFocus "down"; }
+        bind "Alt e" { MoveFocus "up"; }
+        bind "Alt i" { MoveFocusOrTab "right"; }
+        bind "Alt u" { MoveTab "right"; }
+    }
     pane {
         bind "left" { MoveFocus "left"; }
         bind "down" { MoveFocus "down"; }
@@ -151,13 +159,7 @@ keybinds clear-defaults=true {
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
         bind "Alt f" { ToggleFloatingPanes; }
-        bind "Alt h" { MoveFocusOrTab "left"; }
-        bind "Alt l" { MoveTab "left"; }
-        bind "Alt n" { MoveFocus "down"; }
-        bind "Alt e" { MoveFocus "up"; }
-        bind "Alt i" { MoveFocusOrTab "right"; }
         bind "Alt k" { NewPane; }
-        bind "Alt u" { MoveTab "right"; }
         bind "Alt 1" { GoToTab 1; }
         bind "Alt 2" { GoToTab 2; }
         bind "Alt 3" { GoToTab 3; }
