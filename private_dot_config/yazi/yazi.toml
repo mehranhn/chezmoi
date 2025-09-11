@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 ratio = [1, 4, 3]
 sort_by = "natural"
 sort_dir_first = true
@@ -16,33 +16,38 @@ prepend_fetchers = [
 ]
 
 prepend_previewers = [
-	{ mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", name = "*.{tar.gz,tar.xz}", run = "ouch" },
-	{ name = "*.md",                        run = "glow" },
-	# { mime = "text/csv",                    run = "miller"},
-	{ mime = "audio/*",                     run = "exifaudio"},
+    { name = "/.files/share", run = "noop" },
+    { mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", name = "*.{tar.gz,tar.xz}", run = "ouch" },
+    { name = "*.md",                        run = "glow" },
+    # { mime = "text/csv",                    run = "miller"},
+    { mime = "audio/*",                     run = "exifaudio"},
+]
+
+prepend_preloaders = [
+    { name = "/.files/share", run = "noop" },
 ]
 
 [opener]
 custom-play = [
-	{ run = 'mcontrol mpv --force-window -quiet "$@"', orphan = true, for = "unix" },
+    { run = 'mcontrol mpv --force-window -quiet "$@"', orphan = true, for = "unix" },
 ]
 
 pdff = [
-	{ run = 'zathura "$@"', desc = "zathura", orphan = true, block = false, for = "unix" },
+    { run = 'zathura "$@"', desc = "zathura", orphan = true, block = false, for = "unix" },
 ]
 
 add-sub = [
-	{ run  = '''echo sub-add "'$0'" | socat - /tmp/mpv.sock''', desc = "Add sub to MPV" },
+    { run  = '''echo sub-add "'$0'" | socat - /tmp/mpv.sock''', desc = "Add sub to MPV" },
 ]
 
 ouch-decompress = [
-	{ run  = '''ouch decompress -y "$@"''', desc = "decompress" },
+    { run  = '''ouch decompress -y "$@"''', desc = "decompress" },
 ]
 
 [open]
 prepend_rules = [
-	{ mime = "application/pdf", use = [ "pdff", "reveal" ] },
-	{ name = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "add-sub", "edit" ]},
-	{ mime = "{audio,video}/*", use = [ "custom-play", "play", "reveal" ] },
-	{ mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", name = "*.{tar.gz,tar.xz}", use = [ "ouch-decompress", "reveal" ] },
+    { mime = "application/pdf", use = [ "pdff", "reveal" ] },
+    { name = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "add-sub", "edit" ]},
+    { mime = "{audio,video}/*", use = [ "custom-play", "play", "reveal" ] },
+    { mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", name = "*.{tar.gz,tar.xz}", use = [ "ouch-decompress", "reveal" ] },
 ]
