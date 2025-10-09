@@ -23,8 +23,10 @@ export XDG_SESSION_TYPE=wayland
 case "$compositor" in
    "dwl")  XDG_CURRENT_DESKTOP=wlroots XDG_SESSION_DESKTOP=dwl exec dbus-launch --exit-with-session /usr/local/bin/dwl -s 'somebar'
    ;;
-   "hypr") XDG_CURRENT_DESKTOP=Hyprland XDG_SESSION_DESKTOP=Hyprland exec /usr/bin/Hyprland
+   "hypr") XDG_CURRENT_DESKTOP=Hyprland XDG_SESSION_DESKTOP=Hyprland exec Hyprland
    # ;;
-   # "sway") exec /usr/bin/sway
+   # "sway") exec sway
+   # ;;
+   # "labwc") XDG_CURRENT_DESKTOP=wlroots XDG_SESSION_DESKTOP=labwc exec labwc
    # ;;
 esac
