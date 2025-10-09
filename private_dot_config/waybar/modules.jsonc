@@ -213,7 +213,6 @@
         "max-length": 20,
     },
     "network": {
-        "interface": "br*",
         "format": "{ifname}",
         "format-wifi": "{icon}",
         "format-ethernet": "󰌘",
@@ -229,7 +228,6 @@
         ],
     },
     "network#speed": {
-        "interface": "br*",
         "interval": 1,
         "format": "{ifname}",
         "format-wifi": "{icon}  {bandwidthUpBytes:>9}  {bandwidthDownBytes:>9}",
