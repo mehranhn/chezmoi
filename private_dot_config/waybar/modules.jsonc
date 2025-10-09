@@ -244,59 +244,28 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} 󰂰 {volume}%",
-        "format-muted": "󰖁",
+        "format-bluetooth": " {volume}%",
+        "format-bluetooth-muted": " ",
+        "format-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "", "", "󰕾",  ""
-            ],
-            "ignored-sinks": [
-                "Easy Effects Sink"
-            ],
-        },
-        "scroll-step": 5.0,
-        "on-click": "$HOME/.local/bin/volume.sh toggle-mute sink",
-        "on-scroll-up": "$HOME/.local/bin/volume.sh 5.0 sink",
-        "on-scroll-up": "$HOME/.local/bin/volume.sh -5.0 sink",
-        "tooltip-format": "{icon} {desc} | {volume}%",
-        "smooth-scrolling-threshold": 1,
-    },
-
-    "pulseaudio#1": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "󰸈",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": ["", " ", " "]
         },
         "scroll-step": 5.0,
-        "on-click": "$HOME/.local/bin/volume.sh toggle-mute sink",
-        "on-scroll-up": "$HOME/.local/bin/volume.sh 5.0 sink",
-        "on-scroll-up": "$HOME/.local/bin/volume.sh -5.0 sink",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-",
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
         "tooltip": true,
         "tooltip-format": "{icon} {desc} | {volume}%",
+        "smooth-scrolling-threshold": 1,
     },
 
     "pulseaudio#source": {
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "",
-        "on-click": "$HOME/.local/bin/volume.sh toggle-mute source",
-        "on-scroll-up": "$HOME/.local/bin/volume.sh 5.0 source",
-        "on-scroll-up": "$HOME/.local/bin/volume.sh -5.0 source",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%-",
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%+",
         "scroll-step": 5,
     },
     "tray": {
@@ -307,7 +276,9 @@
         "node-type": "Audio/Sink",
         "format": "{volume}% {icon}",
         "format-muted": "",
-        "on-click": "helvum",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-",
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
         "format-icons": {
             "default": ["", "", ""]
         }
@@ -316,7 +287,9 @@
         "node-type": "Audio/Source",
         "format": "{volume}% 󰍬",
         "format-muted": "󰍭",
-        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%-",
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%+",
         "scroll-step": 5,
     },
     "mpd": {

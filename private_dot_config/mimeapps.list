@@ -2,24 +2,24 @@
 application/pdf=org.pwmt.zathura.desktop
 application/xps==org.pwmt.zathura.desktop
 application/vnd.ms-xpsdocument==org.pwmt.zathura.desktop
-x-scheme-handler/http=librewolf.desktop
-x-scheme-handler/https=librewolf.desktop
-x-scheme-handler/ftp=librewolf.desktop
-x-scheme-handler/chrome=librewolf.desktop
-x-scheme-handler/about=librewolf.desktop
-x-scheme-handler/unknown=librewolf.desktop
-application/x-extension-htm=librewolf.desktop
-application/x-extension-html=librewolf.desktop
-application/x-extension-shtml=librewolf.desktop
-application/xhtml+xml=librewolf.desktop
-application/x-extension-xhtml=librewolf.desktop
-application/x-extension-xht=librewolf.desktop
+x-scheme-handler/http=zen.desktop
+x-scheme-handler/https=zen.desktop
+x-scheme-handler/ftp=zen.desktop
+x-scheme-handler/chrome=zen.desktop
+x-scheme-handler/about=zen.desktop
+x-scheme-handler/unknown=zen.desktop
+application/x-extension-htm=zen.desktop
+application/x-extension-html=zen.desktop
+application/x-extension-shtml=zen.desktop
+application/xhtml+xml=zen.desktop
+application/x-extension-xhtml=zen.desktop
+application/x-extension-xht=zen.desktop
 image/png=imv.desktop
 image/jpg=imv.desktop
 image/jpeg=imv.desktop
 text/plain=nvim.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-EB56Q1.desktop
-text/html=librewolf.desktop
+text/html=zen.desktop
 inode/directory=pcmanfm.desktop
 
 [Added Associations]
@@ -27,3 +27,13 @@ x-scheme-handler/tg=userapp-Telegram Desktop-EB56Q1.desktop;
 application/vnd.ms-visio.drawing.main+xml=libreoffice-draw.desktop;
 application/vnd.oasis.opendocument.text=libreoffice-writer.desktop;
 image/svg+xml=org.inkscape.Inkscape.desktop;
+x-scheme-handler/http=zen.desktop;
+x-scheme-handler/https=zen.desktop;
+x-scheme-handler/chrome=zen.desktop;
+text/html=zen.desktop;
+application/x-extension-htm=zen.desktop;
+application/x-extension-html=zen.desktop;
+application/x-extension-shtml=zen.desktop;
+application/xhtml+xml=zen.desktop;
+application/x-extension-xhtml=zen.desktop;
+application/x-extension-xht=zen.desktop;
