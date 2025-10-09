@@ -1,0 +1,18 @@
+#!/bin/sh
+
+APP_CLASS="$1"
+shift
+
+APP_CMD="$@"
+
+if [ -z "$APP_CLASS" ] || [ -z "$APP_CMD" ]; then
+  echo "Usage: $0 <app_class> <command...>"
+  exit 1
+fi
+
+if hyprctl clients -j | jq -e --arg CLASS "$APP_CLASS" '.[] | select(.class == $CLASS)' > /dev/null; then
+  WINDOW_ADDRESS=$(hyprctl clients -j | jq -r --arg CLASS "$APP_CLASS" '.[] | select(.class == $CLASS) | .address' | head -n 1)
+  hyprctl dispatch focuswindow address:$WINDOW_ADDRESS
+else
+  exec $APP_CMD
+fi

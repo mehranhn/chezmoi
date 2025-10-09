@@ -1,0 +1,35 @@
+// -*- mode: jsonc -*-
+{
+    "include": [
+        "$HOME/.config/waybar/modules-hyprland.jsonc",
+        "$HOME/.config/waybar/modules.jsonc",
+    ],
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 35, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 6, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "margin-left": 2,
+    "margin-right": 2,
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/windowcount",
+        "hyprland/window",
+        "hyprland/submap"
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        "network#speed",
+        "cpu",
+        "memory",
+        "wireplumber",
+        "wireplumber#source",
+        "mpris",
+        "hyprland/language",
+        "idle_inhibitor",
+        "tray",
+    ],
+}

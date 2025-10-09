@@ -1,0 +1,58 @@
+{
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "0",
+            "11": "-",
+            "12": "=",
+            "13": "1",
+            "14": "2",
+            "15": "3",
+            "16": "4",
+            "17": "5",
+            "18": "6",
+            "19": "7",
+            "20": "8",
+            "21": "9",
+            "22": "0",
+            "23": "-",
+            "24": "=",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "hyprland/language": {
+        "format": "{long}"
+    },
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">  {}</span>",
+        "tooltip": false,
+    },
+    "hyprland/windowcount": {
+        "format": "[{}]",
+        // "format-empty": "[0]",
+        // "format-windowed": "[{}]",
+        // "format-fullscreen": "<>",
+        "separate-outputs": true
+    },
+    "hyprland/window": {
+        "format": "  {title}",
+        "max-length": 50
+    }
+}
