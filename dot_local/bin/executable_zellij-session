@@ -1,0 +1,13 @@
+#!/bin/sh
+
+for file in "/etc/profile" "$HOME/.profile" "/etc/yprofile" "$HOME/.yprofile"; do
+    if [ -f "$file" ]; then
+        . "$file"
+    fi
+done
+
+if [ -z "$SSH_AGENT_PID" ]; then
+    eval "$(ssh-agent -s)"
+fi
+
+exec zellij a -c dev
