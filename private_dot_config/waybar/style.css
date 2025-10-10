@@ -34,18 +34,28 @@ tooltip {
   padding: 0px;
   margin-top: 3px;
   margin-bottom: 3px;
-  margin-left: 0px;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-right: 0px;
-  color: @main-fg;
+  margin-left: 1px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-right: 1px;
+  background: @wb-act-bg;
+  color: @wb-act-fg;
   /* animation: ws_normal 20s ease-in-out 1; */
   /* transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
 }
 
-#workspaces button.active {
-  background: @wb-act-bg;
-  color: @wb-act-fg;
+#workspaces button.empty {
+  background: @main-bg;
+  color: @main-fg;
+}
+
+#workspaces button.visible {
+  background: @wb-hvr-bg;
+  color: @wb-hvr-fg;
+}
+
+#workspaces button.urgent {
+  background: #f7768e;
 }
 
 #workspaces button:hover {
