@@ -15,7 +15,6 @@
         ],
     },
     "backlight": {
-        "interval": 2,
         "align": 0,
         "rotate": 0,
         //"format": "{icon} {percent}%",
@@ -28,16 +27,12 @@
             "󰃟 ",
             "󰃠 "
         ],
-        "format": "{icon}",
+        "format": "{icon} {percent}%",
         //"format-icons": ["","","","","","","","","","","","","","",""],
         "tooltip-format": "backlight {percent}%",
         "icon-size": 10,
-        "on-click": "",
-        "on-click-middle": "",
-        "on-click-right": "",
-        "on-update": "",
-        "on-scroll-up": "$HOME/.config/hypr/scripts/Brightness.sh --inc",
-        "on-scroll-down": "$HOME/.config/hypr/scripts/Brightness.sh --dec",
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
         "smooth-scrolling-threshold": 1,
     },
     "backlight#2": {
@@ -122,17 +117,6 @@
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
     },
     "cpu": {
-        "format": "{usage}% 󰍛",
-        "interval": 1,
-        "min-length": 5,
-        "format-alt-click": "click",
-        "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
-        "format-icons": [
-            "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
-        ],
-        "on-click-right": "gnome-system-monitor",
-    },
-    "cpu": {
         "interval": 1,
         "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11} {usage:>2}% ",
         "format-icons": [
@@ -145,6 +129,10 @@
             "<span color='#ff9977'>▇</span>", // orange
             "<span color='#dd532e'>█</span>"  // red
         ],
+    },
+    "cpu#small": {
+        "interval": 1,
+        "format": "{usage:>2}% ",
     },
     "disk": {
         "interval": 30,
@@ -230,7 +218,7 @@
     "network#speed": {
         "interval": 1,
         "format": "{ifname}",
-        "format-wifi": "{icon}  {bandwidthUpBytes:>9}  {bandwidthDownBytes:>9}",
+        "format-wifi": "{icon} {essid}  {bandwidthUpBytes:>9}  {bandwidthDownBytes:>9}",
         "format-ethernet": "󰌘   {bandwidthUpBytes:>9}  {bandwidthDownBytes:>9}",
         "format-disconnected": "󰌙",
         "tooltip-format": "{ifname}",

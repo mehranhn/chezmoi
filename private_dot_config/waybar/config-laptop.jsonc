@@ -23,8 +23,9 @@
     ],
     "modules-right": [
         "network#speed",
-        "cpu",
+        "cpu#small",
         "memory",
+        "backlight",
         "pulseaudio",
         "pulseaudio#source",
         "mpris",
