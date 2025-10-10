@@ -10,4 +10,4 @@ if [ -z "$SSH_AGENT_PID" ]; then
     eval "$(ssh-agent -s)"
 fi
 
-exec zellij a -c dev
+exec zellij a -c dev-remote
