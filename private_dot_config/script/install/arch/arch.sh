@@ -27,7 +27,7 @@ sudo pacman -Sy playerctl pavucontrol htop qt5ct qt6ct imv qbittorrent proxychai
     hyprland hyprsunset hypridle hyprcursor hyprpaper hyprlock hyprland-qt-support hyprpicker hyprpolkitagent hyprutils hyprshot waybar \
     easyeffects calf mda.lv2 lsp-plugins-lv2 mda.lv2 yelp zam-plugins-lv2
 
-paru -S dragon-drop hyprland-per-window-layout ianny clipvault tofi grc zen-browser-bin kora-icon-theme
+paru -S dragon-drop hyprland-per-window-layout ianny clipvault tofi grc zen-browser-bin kora-icon-theme wleave
 
 sudo pacman -S ccls ninja cmake lua-language-server lldb delve docker docker-compose cppcheck mitmproxy neovide stylua meson postgresql mariadb
 
