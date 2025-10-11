@@ -30,7 +30,7 @@ sudo pacman -Sy playerctl pavucontrol htop qt5ct qt6ct imv qbittorrent proxychai
 paru -S dragon-drop hyprland-per-window-layout ianny clipvault tofi grc zen-browser-bin kora-icon-theme
 
 sudo pacman -S ccls ninja cmake lua-language-server lldb delve docker docker-compose cppcheck mitmproxy neovide stylua meson postgresql mariadb \
-    tree-sitter-cli
+    tree-sitter-cli bash-language-server
 
 flatpak install flathub com.github.tchx84.Flatseal org.gtk.Gtk3theme.Adwaita-dark com.github.iwalton3.jellyfin-media-player \
     org.gtk.Gtk3theme.Breeze io.github.flattool.Warehouse io.github.fabrialberio.pinapp
