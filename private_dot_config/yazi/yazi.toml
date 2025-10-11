@@ -28,10 +28,6 @@ prepend_preloaders = [
 ]
 
 [opener]
-custom-play = [
-    { run = 'mcontrol mpv --force-window -quiet "$@"', orphan = true, for = "unix" },
-]
-
 pdff = [
     { run = 'zathura "$@"', desc = "zathura", orphan = true, block = false, for = "unix" },
 ]
@@ -48,6 +44,6 @@ ouch-decompress = [
 prepend_rules = [
     { mime = "application/pdf", use = [ "pdff", "reveal" ] },
     { name = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "add-sub", "edit" ]},
-    { mime = "{audio,video}/*", use = [ "custom-play", "play", "reveal" ] },
+    { mime = "{audio,video}/*", use = [ "play", "reveal" ] },
     { mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", name = "*.{tar.gz,tar.xz}", use = [ "ouch-decompress", "reveal" ] },
 ]
