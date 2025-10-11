@@ -25,7 +25,7 @@ sudo pacman -Sy playerctl pavucontrol htop qt5ct qt6ct imv qbittorrent proxychai
     ttf-hack ttf-font-awesome ttf-roboto inter-font ttf-fira-code ttf-hack-nerd tofi foot nwg-look \
     noto-fonts-cjk noto-fonts-emoji noto-fonts ttf-sourcecodepro-nerd ttf-firacode-nerd ttf-iosevka-nerd \
     hyprland hyprsunset hypridle hyprcursor hyprpaper hyprlock hyprland-qt-support hyprpicker hyprpolkitagent hyprutils hyprshot waybar \
-    easyeffects calf mda.lv2 lsp-plugins-lv2 mda.lv2 yelp zam-plugins-lv2 guvcview
+    easyeffects calf mda.lv2 lsp-plugins-lv2 mda.lv2 yelp zam-plugins-lv2 guvcview gimp
 
 paru -S dragon-drop hyprland-per-window-layout ianny clipvault tofi grc zen-browser-bin kora-icon-theme
 
