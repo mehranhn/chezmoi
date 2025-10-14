@@ -22,7 +22,7 @@
         "clock",
     ],
     "modules-right": [
-        "network#speed",
+        "network#speedpc",
         "cpu",
         "memory",
         "pulseaudio#source",

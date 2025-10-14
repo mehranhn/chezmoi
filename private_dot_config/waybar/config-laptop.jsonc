@@ -22,7 +22,7 @@
         "clock",
     ],
     "modules-right": [
-        "network#speed",
+        "network#speedlaptop",
         "cpu#small",
         "memory",
         "backlight",

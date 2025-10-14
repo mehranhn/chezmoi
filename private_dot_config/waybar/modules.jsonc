@@ -215,7 +215,24 @@
             "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
         ],
     },
-    "network#speed": {
+    "network#speedpc": {
+        "interface": "enp*",
+        "interval": 1,
+        "format": "{ifname}",
+        "format-wifi": "{icon} {essid}  {bandwidthUpBytes:>9}  {bandwidthDownBytes:>9}",
+        "format-ethernet": "󰌘   {bandwidthUpBytes:>9}  {bandwidthDownBytes:>9}",
+        "format-disconnected": "󰌙",
+        "tooltip-format": "{ifname}",
+        "format-linked": "󰈁 {ifname} (No IP)",
+        "tooltip-format-wifi": "{essid} {icon} {ipaddr} {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname} {ipaddr} 󰌘",
+        "tooltip-format-disconnected": "󰌙 Disconnected",
+        "format-icons": [
+            "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+        ]
+    },
+    "network#speedlaptop": {
+        "interface": "wl*",
         "interval": 1,
         "format": "{ifname}",
         "format-wifi": "{icon} {essid}  {bandwidthUpBytes:>9}  {bandwidthDownBytes:>9}",
