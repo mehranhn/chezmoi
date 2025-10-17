@@ -4,6 +4,21 @@ pacman -S base base-devel linux linux-headers amd-ucode
 # init2
 pacman -S vim nano git grub efibootmgr networkmanager wireless_tools ntfs-3g xdg-utils xdg-user-dirs openssh rsync reflector
 
+ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
+hwclock --systohc
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+locale-gen
+echo "export LANG=\"en_US.UTF-8\"" > /etc/locale.conf
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=grub
+grub-mkconfig -o /boot/grub/grub.cfg
+
+groupadd files
+mkdir /.files
+setfacl -Rdm g:files:rwx /.files
+setfacl -Rm g:files:rwx /.files
+
+passwd
+
 # amd
 pacman -S mesa xf86-video-amdgpu vulkan-radeon libva-mesa-driver mesa-vdpau radeontop amdgpu_top
 pacman -S vulkan-icd-loader vulkan-headers
@@ -36,3 +51,23 @@ flatpak install flathub com.github.tchx84.Flatseal org.gtk.Gtk3theme.Adwaita-dar
     org.gtk.Gtk3theme.Breeze io.github.flattool.Warehouse io.github.fabrialberio.pinapp
 
 git clone https://github.com/GabePoel/KvLibadwaita.git
+
+
+# init 2
+ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
+hwclock --systohc
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+locale-gen
+echo "export LANG=\"en_US.UTF-8\"" > /etc/locale.conf
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=grub
+grub-mkconfig -o /boot/grub/grub.cfg
+
+groupadd files
+mkdir /.files
+setfacl -Rdm g:files:rwx /.files
+setfacl -Rm g:files:rwx /.files
+
+passwd
+useradd -mG wheel -s "$(which fish)" mhn
+passwd mhn
+EDITOR=nano visudo
