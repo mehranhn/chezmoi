@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -avz $1:/var/cache/pacman/pkg/ /var/cache/pacman/pkg/
