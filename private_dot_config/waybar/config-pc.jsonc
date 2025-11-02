@@ -27,7 +27,6 @@
         "memory",
         "pulseaudio#source",
         "pulseaudio",
-        "mpris",
         "hyprland/language",
         "idle_inhibitor",
         "tray",

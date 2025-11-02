@@ -28,7 +28,6 @@
         "backlight",
         "pulseaudio#source",
         "pulseaudio",
-        "mpris",
         "hyprland/language",
         "battery",
         "idle_inhibitor",
