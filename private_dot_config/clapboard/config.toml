@@ -1,8 +1,0 @@
-# launcher = [ "bemenu", "-l", "10" ]
-launcher = [ "tofi", "--fuzzy-match=true" ]
-# launcher = [ "yofi" ]
-history_size = 50
-
-[favorites]
-# You can add your favorite clipboard pastes here like this:
-# "some key" = "some value"

@@ -1,10 +1,5 @@
 #!/usr/bin/sh
 export QT_QPA_PLATFORMTHEME="qt5ct"
-# export XDG_CONFIG_HOME="${HOME}/.config"
-# export XDG_CACHE_HOME="$HOME/.cache"
-# export XDG_DATA_HOME="$HOME/.local/share"
-# export XDG_STATE_HOME="$HOME/.local/state"
-# export XDG_CURRENT_DESKTOP="KDE"
 export PAGER="bat"
 export EDITOR="nvim"
 
@@ -21,28 +16,5 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/go/bin"
 # export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.local/bin"
-# export PATH="$PATH:$HOME/.local/share/go/bin"
-# export PATH="$PATH:$HOME/.dotnet/tools"
-# export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share"
-# export XDG_DATA_DIRS="$XDG_DATA_DIRS:/home/mhn/.local/share/flatpak/exports/share"
 export LANG="en_US.UTF-8"
 # export GPG_TTY="$(tty)"
-
-#if !SYSTEMD
-# pipewire &
-# pipewire-pulse &
-# pipewire-media-session &
-# pipewire -c "/home/mhn/.config/noice-suppression-for-voice/filter-chain.conf" &
-# brightnessctl -d intel_backlight set 50% &
-# brightnessctl -d asus::kbd_backlight set 1 &
-# xautolock -time 15 -locker "slock & loginctl suspend" -detectsleep &
-# else
-#endif
-# moc &
-# dunst ~/.config/dunst/dunstrc &
-# udiskie &
-# kdeconnect-cli --refresh &
-# lxqt-policykit-agent &
-# nm-applet &
-# blueman-applet &
-# asusctl profile -P Quiet &

@@ -17,7 +17,7 @@ sudo pacman -Sy playerctl pavucontrol htop qt5ct qt6ct imv qbittorrent proxychai
     mlocate alsa-utils dunst libnotify file-roller udisks2 udiskie chezmoi flatpak \
     fzf neovim tree ripgrep fd the_silver_searcher luarocks wget perl-image-exiftool \
     ffmpegthumbnailer network-manager-applet sshfs curl lazygit mpv mpv-mpris nfs-utils \
-    obs-studio unrar polkit wireguard-tools tcpdump eza bat tokei docx2txt drawing \
+    obs-studio unrar polkit wireguard-tools tcpdump eza bat tokei docx2txt drawing ly \
     rustup fish powerline-fonts iptraf-ng mutt ncdu iftop bleachbit unzip btop transmission-cli \
     odt2txt poppler imagemagick mediainfo perl-file-mimeinfo zathura zathura-pdf-mupdf zathura-ps zathura-djvu zathura-cb \
     libvncserver freerdp remmina pass pass-otp handbrake dash shellcheck tcc tor tmux zellij gnome-themes-standard adwaita-icon-theme \
