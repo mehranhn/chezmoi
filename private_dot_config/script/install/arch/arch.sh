@@ -29,7 +29,7 @@ sudo pacman -Sy playerctl pavucontrol htop qt5ct qt6ct imv qbittorrent proxychai
     pipewire-docs pipewire-pulse pipewire-alsa pipewire-jack pipewire-audio wireplumber helvum noise-suppression-for-voice \
     ttf-hack ttf-font-awesome ttf-roboto inter-font ttf-fira-code ttf-hack-nerd foot nwg-look rofi grc \
     noto-fonts-cjk noto-fonts-emoji noto-fonts ttf-sourcecodepro-nerd ttf-firacode-nerd ttf-iosevka-nerd \
-    hyprland hyprsunset hypridle hyprcursor hyprpaper hyprlock hyprland-qt-support hyprpicker hyprpolkitagent hyprutils hyprshot waybar \
+    hyprland niri hyprsunset hypridle hyprcursor hyprpaper hyprlock hyprland-qt-support hyprpicker hyprpolkitagent hyprutils hyprshot waybar \
     xdg-desktop-portal-hyprland easyeffects calf mda.lv2 lsp-plugins-lv2 mda.lv2 yelp zam-plugins-lv2 guvcview gimp shortwave yt-dlp
 
 git clone https://aur.archlinux.org/paru.git 
