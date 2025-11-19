@@ -22,7 +22,7 @@ sudo pacman -Sy playerctl pavucontrol htop qt5ct qt6ct imv qbittorrent proxychai
     odt2txt poppler imagemagick mediainfo perl-file-mimeinfo zathura zathura-pdf-mupdf zathura-ps zathura-djvu zathura-cb \
     libvncserver freerdp remmina pass pass-otp handbrake dash shellcheck tcc tor tmux zellij gnome-themes-standard adwaita-icon-theme \
     piper solaar v4l2loopback-dkms fping bind atool starship zbar cairo pango nautilus jq baobab util-linux glow catdoc \
-    xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr telegram-desktop \
+    xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr telegram-desktop tor torbrowser-launcher \
     wayland-protocols swaybg swayidle swaylock slurp wl-clipboard chafa qt5-wayland qt6-wayland kvantum kvantum-qt5 \
     glfw-wayland grim gamescope sway xorg-xwayland ecryptfs-utils polkit-gnome kdiskmark smartmontools acl wayvnc \
     yazi p7zip zoxide ouch nerd-fonts miller scrcpy gvfs-smb netcat mpd mpc ncmpcpp cpio samba cifs-utils waypipe labwc \
@@ -38,7 +38,7 @@ makepkg -si
 
 paru -S dragon-drop hyprland-per-window-layout ianny clipvault tofi zen-browser-bin kora-icon-theme
 
-sudo pacman -S ccls ninja cmake lua-language-server lldb delve docker docker-compose cppcheck mitmproxy neovide stylua meson postgresql mariadb \
+sudo pacman -S ccls ninja cmake lua-language-server lldb delve docker docker-compose docker-buildx cppcheck mitmproxy neovide stylua meson postgresql mariadb \
     tree-sitter-cli bash-language-server
 
 flatpak install flathub com.github.tchx84.Flatseal org.gtk.Gtk3theme.Adwaita-dark com.github.iwalton3.jellyfin-media-player \
