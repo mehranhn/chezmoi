@@ -46,12 +46,14 @@ hash = "47865a70cade14a0b9b6bc6a54f16bdb"
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
 rev = "d7588f6"
-hash = "63b6c222bf2103b3023389dde5e2ecfe"
+hash = "3cce60031b27cbce80b50f68ca319c0a"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
 rev = "d7588f6"
 hash = "1adc12c2b2b025411ab61eb8f0879574"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "ficd0/ashen:ashen"
+rev = "02662b8"
+hash = "65b56e9ee65dd33eec62d6ca4209611b"
