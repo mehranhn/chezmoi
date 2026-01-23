@@ -1,48 +1,48 @@
 # [flavor]
-# use = "catppuccin-mocha"
-
-[mgr]
-# Marker
-marker_copied   = { fg = "yellow", bg = "yellow" }
-marker_cut      = { fg = "red", bg = "red" }
-marker_selected = { fg = "magenta", bg = "magenta" }
-
-# Count
-count_copied   = { fg = "black", bg = "yellow" }
-count_cut      = { fg = "white", bg = "red" }
-count_selected = { fg = "white", bg = "magenta" }
-
-syntect_theme = "~/.config/yazi/tmThemes/bluloco-dark-plus.tmTheme"
-
-[status]
-progress_label = { fg = "white", bg = "blue", bold = true }
-
-[which]
-mask = { bg = "#282c34" }
-
-[filetype]
-rules = [
-	# Images
-	{ mime = "image/*", fg = "magenta" },
-
-	# Videos
-	{ mime = "video/*", fg = "magenta" },
-	{ mime = "audio/*", fg = "cyan" },
-
-	# Empty files
-	{ mime = "inode/x-empty", fg = "cyan" },
-
-	# Orphan symbolic links
-	{ name = "*", is = "block",  fg = "yellow" },
-	{ name = "*", is = "char",   fg = "cyan" },
-	{ name = "*", is = "exec",   fg = "green" },
-	{ name = "*", is = "fifo",   fg = "yellow" },
-	{ name = "*", is = "link",   fg = "cyan" },
-	{ name = "*", is = "orphan", fg = "red" },
-	{ name = "*", is = "sock",   fg = "red" },
-
-	# Fallback
-	# { name = "*", fg = "white" },
-	{ name = "*/", is = "link",  fg = "cyan" },
-	{ name = "*/", fg = "blue" }
-]
+use = "ashen"
+#
+# [mgr]
+# # Marker
+# marker_copied   = { fg = "yellow", bg = "yellow" }
+# marker_cut      = { fg = "red", bg = "red" }
+# marker_selected = { fg = "magenta", bg = "magenta" }
+#
+# # Count
+# count_copied   = { fg = "black", bg = "yellow" }
+# count_cut      = { fg = "white", bg = "red" }
+# count_selected = { fg = "white", bg = "magenta" }
+#
+# syntect_theme = "~/.config/yazi/tmThemes/bluloco-dark-plus.tmTheme"
+#
+# [status]
+# progress_label = { fg = "white", bg = "blue", bold = true }
+#
+# [which]
+# mask = { bg = "#282c34" }
+#
+# [filetype]
+# rules = [
+# 	# Images
+# 	{ mime = "image/*", fg = "magenta" },
+#
+# 	# Videos
+# 	{ mime = "video/*", fg = "magenta" },
+# 	{ mime = "audio/*", fg = "cyan" },
+#
+# 	# Empty files
+# 	{ mime = "inode/x-empty", fg = "cyan" },
+#
+# 	# Orphan symbolic links
+# 	{ name = "*", is = "block",  fg = "yellow" },
+# 	{ name = "*", is = "char",   fg = "cyan" },
+# 	{ name = "*", is = "exec",   fg = "green" },
+# 	{ name = "*", is = "fifo",   fg = "yellow" },
+# 	{ name = "*", is = "link",   fg = "cyan" },
+# 	{ name = "*", is = "orphan", fg = "red" },
+# 	{ name = "*", is = "sock",   fg = "red" },
+#
+# 	# Fallback
+# 	# { name = "*", fg = "white" },
+# 	{ name = "*/", is = "link",  fg = "cyan" },
+# 	{ name = "*/", fg = "blue" }
+# ]
