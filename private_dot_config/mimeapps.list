@@ -1,7 +1,7 @@
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop
-application/xps==org.pwmt.zathura.desktop
-application/vnd.ms-xpsdocument==org.pwmt.zathura.desktop
+application/xps=org.pwmt.zathura.desktop
+application/vnd.ms-xpsdocument=org.pwmt.zathura.desktop
 x-scheme-handler/http=zen.desktop
 x-scheme-handler/https=zen.desktop
 x-scheme-handler/ftp=zen.desktop
@@ -21,6 +21,11 @@ text/plain=nvim.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-EB56Q1.desktop
 text/html=zen.desktop
 inode/directory=pcmanfm.desktop
+video/mp4=mpv.desktop
+video/x-matroska=mpv.desktop
+video/webm=mpv.desktop
+video/x-msvideo=mpv.desktop
+video/mpeg=mpv.desktop
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-EB56Q1.desktop;
