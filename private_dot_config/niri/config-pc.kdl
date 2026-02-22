@@ -1,0 +1,161 @@
+spawn-sh-at-startup "waybar -c ~/.config/waybar/config-pc-niri.jsonc"
+
+output "DP-1" {
+    mode "1920x1080@60.000"
+    position x=0 y=0
+    focus-at-startup
+
+    hot-corners {
+        off
+    }
+}
+
+output "HDMI-A-1" {
+    mode "1920x1080@60.000"
+    position x=1920 y=0
+
+    hot-corners {
+        off
+    }
+}
+
+workspace "l1" {
+    open-on-output "DP-1"
+}
+
+workspace "l2" {
+    open-on-output "DP-1"
+}
+
+workspace "l3" {
+    open-on-output "DP-1"
+}
+
+workspace "l4" {
+    open-on-output "DP-1"
+}
+
+workspace "l5" {
+    open-on-output "DP-1"
+}
+
+workspace "l6" {
+    open-on-output "DP-1"
+}
+
+workspace "l7" {
+    open-on-output "DP-1"
+}
+
+workspace "l8" {
+    open-on-output "DP-1"
+}
+
+workspace "l9" {
+    open-on-output "DP-1"
+}
+
+workspace "l10" {
+    open-on-output "DP-1"
+}
+
+workspace "r1" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "r2" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "r3" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "r4" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "r5" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "r6" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "r7" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "r8" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "r9" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "r10" {
+    open-on-output "HDMI-A-1"
+}
+
+window-rule {
+    match app-id="Myazi"
+
+    open-on-workspace "l3"
+}
+
+window-rule {
+    match app-id="Mnvim"
+
+    open-on-workspace "l4"
+}
+
+window-rule {
+    match app-id="com.github.iwalton3.jellyfin-media-player"
+
+    open-on-workspace "l6"
+}
+
+window-rule {
+    match app-id="zen"
+
+    open-on-workspace "r2"
+}
+
+window-rule {
+    match app-id="info.mumble.Mumble"
+
+    open-on-workspace "r3"
+}
+
+window-rule {
+    match app-id="virt-manager"
+
+    open-on-workspace "r5"
+}
+
+window-rule {
+    match app-id="org.telegram.desktop"
+    exclude app-id="org.telegram.desktop" title="Media viewer"
+
+    open-on-workspace "r6"
+}
+
+window-rule {
+    match app-id="org.gajim.Gajim"
+
+    open-on-workspace "r6"
+}
+
+window-rule {
+    match app-id="com.obsproject.Studio"
+
+    open-on-workspace "r8"
+}
+
+window-rule {
+    match app-id="org.qbittorrent.qBittorrent"
+
+    open-on-workspace "r9"
+}

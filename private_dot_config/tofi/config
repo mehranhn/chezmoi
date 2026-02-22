@@ -1,9 +1,13 @@
 fuzzy-match=true
 font=/usr/share/fonts/hack/Hack-Regular.ttf
-font-size=14
+font-size=18
 hint-font=false
 late-keyboard-init=true
 ascii-input=true
 border-width=0
 outline-width=0
 background-color=#000A
+width=1280
+height=720
+margin-left=320
+margin-top=160

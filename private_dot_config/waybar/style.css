@@ -49,7 +49,7 @@ tooltip {
   color: @main-fg;
 }
 
-#workspaces button.visible {
+#workspaces button.visible, #workspaces button.active {
   background: @wb-hvr-bg;
   color: @wb-hvr-fg;
 }

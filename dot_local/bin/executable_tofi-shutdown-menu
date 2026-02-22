@@ -1,0 +1,16 @@
+#!/bin/sh
+choices="1: Shutdown\n2: Reboot\n3: Sleep"
+
+chosen=$(echo -e $choices | tofi --prompt-text "Power Menu: ")
+
+case $chosen in
+    *"Shutdown")
+        systemctl poweroff
+        ;;
+    *"Reboot")
+        systemctl reboot
+        ;;
+    *"Sleep")
+        systemctl suspend
+        ;;
+esac

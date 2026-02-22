@@ -29,8 +29,9 @@ sudo pacman -Sy playerctl pavucontrol htop qt5ct qt6ct imv qbittorrent proxychai
     pipewire-docs pipewire-pulse pipewire-alsa pipewire-jack pipewire-audio wireplumber helvum noise-suppression-for-voice \
     ttf-hack ttf-font-awesome ttf-roboto inter-font ttf-fira-code ttf-hack-nerd foot nwg-look rofi grc \
     noto-fonts-cjk noto-fonts-emoji noto-fonts ttf-sourcecodepro-nerd ttf-firacode-nerd ttf-iosevka-nerd \
-    hyprland niri hyprsunset hypridle hyprcursor hyprpaper hyprlock hyprland-qt-support hyprpicker hyprpolkitagent hyprutils hyprshot waybar \
-    xdg-desktop-portal-hyprland easyeffects calf mda.lv2 lsp-plugins-lv2 mda.lv2 yelp zam-plugins-lv2 guvcview gimp shortwave yt-dlp
+    hyprland hyprsunset hypridle hyprcursor hyprpaper hyprlock hyprland-qt-support hyprpicker hyprpolkitagent hyprutils hyprshot waybar \
+    xdg-desktop-portal-hyprland easyeffects calf mda.lv2 lsp-plugins-lv2 mda.lv2 yelp zam-plugins-lv2 guvcview gimp shortwave yt-dlp \
+    niri xdg-desktop-portal-gnome xwayland-satellite
 
 git clone https://aur.archlinux.org/paru.git 
 cd paru
@@ -39,7 +40,7 @@ makepkg -si
 paru -S dragon-drop hyprland-per-window-layout ianny clipvault tofi zen-browser-bin kora-icon-theme
 
 sudo pacman -S ccls ninja cmake lua-language-server lldb delve docker docker-compose docker-buildx cppcheck mitmproxy neovide stylua meson postgresql mariadb \
-    tree-sitter-cli bash-language-server
+    tree-sitter-cli bash-language-server just
 
 flatpak install flathub com.github.tchx84.Flatseal org.gtk.Gtk3theme.Adwaita-dark com.github.iwalton3.jellyfin-media-player \
     org.gtk.Gtk3theme.Breeze io.github.flattool.Warehouse io.github.fabrialberio.pinapp

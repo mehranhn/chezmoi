@@ -1,0 +1,18 @@
+#!/bin/sh
+
+APP_CLASS="$1"
+shift
+
+APP_CMD="$@"
+
+if [ -z "$APP_CLASS" ] || [ -z "$APP_CMD" ]; then
+  echo "Usage: $0 <app_class> <command...>"
+  exit 1
+fi
+
+if niri msg -j windows | jq -e --arg CLASS "$APP_CLASS" '.[] | select(.app_id == $CLASS)' > /dev/null; then
+  WINDOW_ID=$(niri msg -j windows | jq -r --arg CLASS "$APP_CLASS" '.[] | select(.app_id == $CLASS) | .id' | head -n 1)
+  niri msg action focus-window --id $WINDOW_ID
+else
+  exec $APP_CMD
+fi

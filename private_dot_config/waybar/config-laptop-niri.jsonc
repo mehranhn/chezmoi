@@ -1,0 +1,34 @@
+// -*- mode: jsonc -*-
+{
+    "include": [
+        "$HOME/.config/waybar/modules-niri.jsonc",
+        "$HOME/.config/waybar/modules.jsonc",
+    ],
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 35, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 6, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "margin-left": 2,
+    "margin-right": 2,
+    "modules-left": [
+        "niri/workspaces",
+        "niri/window",
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        "network#speedlaptop",
+        "cpu#small",
+        "memory",
+        "backlight",
+        "pulseaudio#source",
+        "pulseaudio",
+        "niri/language",
+        "battery",
+        "idle_inhibitor",
+        "tray",
+    ],
+}
