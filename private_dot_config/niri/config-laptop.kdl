@@ -50,6 +50,10 @@ workspace "l10" {
     open-on-output "eDP-1"
 }
 
+workspace "scratch" {
+    open-on-output "eDP-1"
+}
+
 window-rule {
     match app-id="Myazi"
 
