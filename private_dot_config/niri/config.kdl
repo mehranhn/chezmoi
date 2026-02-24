@@ -262,12 +262,9 @@ window-rule {
 
 window-rule {
     match app-id="Myazi"
-
-    open-maximized-to-edges true
-}
-
-window-rule {
     match app-id="Mnvim"
+    match app-id="org.qbittorrent.qBittorrent"
+    match app-id="zen"
 
     open-maximized-to-edges true
 }
@@ -591,16 +588,19 @@ binds {
     Mod+Shift+BracketLeft repeat=false hotkey-overlay-title="Toggle Scratchpad: ncmpcpp" { spawn "nscratch" "-a" "-m" "-id" "Mncmpcpp" "-s" "footclient -a Mncmpcpp -T ncmpcpp -L ncmpcpp"; }
     Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle Scratchpad: pavucontrol" { spawn "nscratch" "-a" "-m" "-id" "org.pulseaudio.pavucontrol" "-s" "pavucontrol -t 4"; }
 
+    Mod+Grave repeat=false hotkey-overlay-title=null { spawn "killall" "-SIGUSR1" "waybar"; }
+
     Mod+Shift+Q repeat=false hotkey-overlay-title="Shutdown Menu" { spawn "tofi-shutdown-menu"; }
     Mod+Shift+Ctrl+Q repeat=false hotkey-overlay-title="Quit" { quit; }
+
 }
 
 recent-windows {
     binds {
         Mod+Tab         { next-window     scope="output"; }
         Mod+Shift+Tab   { previous-window scope="output"; }
-        Mod+Grave       { next-window     scope="workspace"; }
-        Mod+Shift+Grave { previous-window scope="workspace"; }
+        Alt+Grave       { next-window     scope="workspace"; }
+        Alt+Shift+Grave { previous-window scope="workspace"; }
         Alt+Tab         { next-window     scope="all"; }
         Alt+Shift+Tab   { previous-window scope="all"; }
     }
