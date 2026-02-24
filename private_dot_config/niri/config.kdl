@@ -300,6 +300,7 @@ window-rule {
 window-rule {
     match app-id="org.telegram.desktop" title="Media viewer"
 
+    open-maximized-to-edges false
     open-floating true
     draw-border-with-background false
 }
