@@ -258,6 +258,11 @@ layer-rule {
 }
 
 window-rule {
+    open-maximized false
+    open-maximized-to-edges false
+}
+
+window-rule {
     match app-id="Myazi"
 
     open-maximized-to-edges true
@@ -293,14 +298,12 @@ window-rule {
     match app-id="org.telegram.desktop"
     exclude app-id="org.telegram.desktop" title="Media viewer"
 
-    open-maximized-to-edges false
     default-column-width { proportion 0.48; }
 }
 
 window-rule {
     match app-id="org.telegram.desktop" title="Media viewer"
 
-    open-maximized-to-edges false
     open-floating true
     draw-border-with-background false
 }
