@@ -28,6 +28,10 @@ prepend_preloaders = [
 ]
 
 [opener]
+play = [
+    { run = "mpv %s", orphan = true, for = "unix" },
+]
+
 pdff = [
     { run = 'zathura "$@"', desc = "zathura", orphan = true, block = false, for = "unix" },
 ]

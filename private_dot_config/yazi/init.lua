@@ -41,3 +41,7 @@ Header:children_add(function()
 end, 500, Header.LEFT)
 
 require("git"):setup()
+
+require("smart-enter"):setup {
+	open_multi = true,
+}
