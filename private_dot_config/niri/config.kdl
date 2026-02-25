@@ -58,7 +58,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="40%"
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -538,7 +538,7 @@ binds {
     Mod+Shift+F repeat=false hotkey-overlay-title="Toggle Fullscreen" { fullscreen-window; }
     Mod+F       repeat=false hotkey-overlay-title="Toggle Maximize To Edge" { maximize-window-to-edges; }
 
-    Mod+Ctrl+C { center-visible-columns; }
+    Mod+Ctrl+C repeat=false { center-visible-columns; }
     // Mod+C { center-column; }
 
     Mod+Minus hotkey-overlay-title="Set Window Width: -10%" { set-column-width "-10%"; }
@@ -561,9 +561,9 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Mod+Shift+R      hotkey-overlay-title="Screenshot"            { screenshot; }
-    Mod+Ctrl+R       hotkey-overlay-title="Screenshot Window" { screenshot-window; }
-    Mod+Shift+Ctrl+R hotkey-overlay-title="Screenshot Screen" { screenshot-screen; }
+    Mod+Shift+R      repeat=false hotkey-overlay-title="Screenshot"            { screenshot; }
+    Mod+Ctrl+R       repeat=false hotkey-overlay-title="Screenshot Window" { screenshot-window; }
+    Mod+Shift+Ctrl+R repeat=false hotkey-overlay-title="Screenshot Screen" { screenshot-screen; }
 
     Mod+BracketRight            hotkey-overlay-title="Set Window To Dynamic Cast Target" { set-dynamic-cast-window; }
     Mod+Shift+BracketRight      hotkey-overlay-title="Set Monitor To Dynamic Cast Target" { set-dynamic-cast-monitor; }
@@ -571,9 +571,9 @@ binds {
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Mod+BackSlash hotkey-overlay-title="Turn Off Monitors" { power-off-monitors; }
-    Mod+Shift+BackSlash hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
-    Mod+Ctrl+Shift+BackSlash hotkey-overlay-title="Trigger Idle" { spawn "killall" "-SIGUSR1" "swayidle"; }
+    Mod+BackSlash repeat=false hotkey-overlay-title="Turn Off Monitors" { power-off-monitors; }
+    Mod+Shift+BackSlash repeat=false hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Mod+Ctrl+Shift+BackSlash repeat=false hotkey-overlay-title="Trigger Idle" { spawn "killall" "-SIGUSR1" "swayidle"; }
 
     Mod+Shift+V repeat=false hotkey-overlay-title="Clipboard History" { spawn-sh "clipvault list | tofi | clipvault get | wl-copy"; }
 
