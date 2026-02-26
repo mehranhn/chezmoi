@@ -264,7 +264,7 @@ window-rule {
     match app-id="Myazi"
     match app-id="Mnvim"
     match app-id="zen"
-    match app-id="org.qbittorrent.qBittorrent"
+    match app-id="org.qbittorrent.qBittorrent" title="^qBittorrent.*"
     match app-id="com.obsproject.Studio"
 
     open-maximized-to-edges true
