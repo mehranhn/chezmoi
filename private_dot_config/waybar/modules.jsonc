@@ -85,6 +85,8 @@
         "timezones": [
             "Asia/Tehran",
             "Etc/UTC",
+            "US/Eastern",
+            "Japan",
         ]
     },
     "clock#2": {
