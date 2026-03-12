@@ -180,7 +180,7 @@ layout {
     }
 }
 
-spawn-at-startup "mpd"
+// spawn-at-startup "mpd"
 spawn-at-startup "ianny"
 spawn-at-startup "/usr/lib/xdg-desktop-portal" "-r"
 spawn-at-startup "hyprpaper"
