@@ -14,7 +14,7 @@ pacman -S mesa xf86-video-qxl
 pacman -S vulkan-icd-loader vulkan-headers
 
 sudo pacman -Sy playerctl pavucontrol htop qt5ct qt6ct imv qbittorrent proxychains xclip moreutils inkscape \
-    mlocate alsa-utils dunst libnotify file-roller udisks2 udiskie chezmoi flatpak \
+    mlocate alsa-utils dunst libnotify file-roller udisks2 udiskie chezmoi flatpak headscale tailscale \
     fzf neovim tree ripgrep fd the_silver_searcher luarocks wget perl-image-exiftool \
     ffmpegthumbnailer network-manager-applet sshfs curl lazygit mpv mpv-mpris nfs-utils \
     obs-studio unrar polkit wireguard-tools tcpdump eza bat tokei docx2txt drawing ly \
