@@ -47,6 +47,7 @@ ouch-decompress = [
 [open]
 prepend_rules = [
     { mime = "application/pdf", use = [ "pdff", "reveal" ] },
+    { mime = "application/epub+zip", use = [ "pdff", "reveal" ] },
     { name = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "add-sub", "edit" ]},
     { mime = "{audio,video}/*", use = [ "play", "reveal" ] },
     { mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", name = "*.{tar.gz,tar.xz}", use = [ "ouch-decompress", "reveal" ] },
