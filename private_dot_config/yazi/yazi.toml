@@ -10,21 +10,21 @@ cache_dir = "~/.cache/yazi/thumbnails"
 
 [plugin]
 prepend_fetchers = [
-    { id = "mime", if = "!(mime|dummy)", name = "*", run = "mime-ext", prio = "high" },
-    { id = "git", name = "*", run = "git" },
-    { id = "git", name = "*/", run = "git" },
+    { group = "mime", id = "mime", if = "!(mime|dummy)", url = "*", run = "mime-ext", prio = "high" },
+    { group = "git", id = "git", url = "*", run = "git" },
+    { group = "git", id = "git", url = "*/", run = "git" },
 ]
 
 prepend_previewers = [
-    { name = "/.files/share", run = "noop" },
-    { mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", name = "*.{tar.gz,tar.xz}", run = "ouch" },
-    { name = "*.md",                        run = "glow" },
+    { url = "/.files/share", run = "noop" },
+    { mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", url = "*.{tar.gz,tar.xz}", run = "ouch" },
+    { url = "*.md",                        run = "glow" },
     # { mime = "text/csv",                    run = "miller"},
     { mime = "audio/*",                     run = "exifaudio"},
 ]
 
 prepend_preloaders = [
-    { name = "/.files/share", run = "noop" },
+    { url = "/.files/share", run = "noop" },
 ]
 
 [opener]
@@ -48,7 +48,7 @@ ouch-decompress = [
 prepend_rules = [
     { mime = "application/pdf", use = [ "pdff", "reveal" ] },
     { mime = "application/epub+zip", use = [ "pdff", "reveal" ] },
-    { name = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "add-sub", "edit" ]},
+    { url  = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "add-sub", "edit" ]},
     { mime = "{audio,video}/*", use = [ "play", "reveal" ] },
-    { mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", name = "*.{tar.gz,tar.xz}", use = [ "ouch-decompress", "reveal" ] },
+    { mime = "application/{*zip,x-tar,x-bzip2,x-7z-compressed,x-rar,x-xz}", url = "*.{tar.gz,tar.xz}", use = [ "ouch-decompress", "reveal" ] },
 ]
