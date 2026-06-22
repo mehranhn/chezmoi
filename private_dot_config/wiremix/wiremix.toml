@@ -1,0 +1,38 @@
+keybindings = [
+    { key = { Char = "l" }, action = "Nothing"},
+    { key = { Char = "i" }, action = { SetRelativeVolume = 0.01 }},
+
+    { key = { Char = "j" }, action = "Nothing" },
+    { key = { Char = "n" }, action = "MoveDown" },
+
+    { key = { Char = "k" }, action = "Nothing" },
+    { key = { Char = "e" }, action = "MoveUp" },
+
+    { key = { Char = "L" }, action = "Nothing"},
+    { key = { Char = "I" }, action = "TabRight"},
+]
+
+# [[names.overrides]]
+# types = [ "endpoint" ]
+# matches = [
+# #   # All keys in a set must match their values.
+#   { "node.virtual" = "true", "media.class" = "Audio/Sink" },
+# #   # # ~ starts a regex
+# #   # { "media.class" = "~.*Audio.*" }
+# #   # # ! negates a condition
+# #   # { "node.name" = "!~my_.*" }
+# #   # # ! can be used with or without a regular expression
+# #   # { "client:application.process.binary" = "!firefox" }
+# #   # # "null" matches if the property is unset
+# #   # { "node.name" = "null" }
+# #   # # "!null" matches if the property exists
+# #   # { "node.name" = "!null" }
+# #   # # Match the string "null"
+# #   # { "node.name" = "\"null\"" }
+# #   # # Match anything but the string "null"
+# #   # { "node.name" = "!\"null\"" }
+# ]
+# templates = [ "{node:node.name}" ]
+
+[[filters]]
+matches = [ { "media.class" = "Audio/Source/Virtual" } ]
