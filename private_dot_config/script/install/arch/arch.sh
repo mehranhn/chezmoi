@@ -31,13 +31,13 @@ sudo pacman -Sy playerctl pavucontrol htop qt5ct qt6ct imv qbittorrent proxychai
     noto-fonts-cjk noto-fonts-emoji noto-fonts ttf-sourcecodepro-nerd ttf-firacode-nerd ttf-iosevka-nerd \
     hyprland hyprsunset hypridle hyprcursor hyprpaper hyprlock hyprland-qt-support hyprpicker hyprpolkitagent hyprutils hyprshot waybar \
     xdg-desktop-portal-hyprland easyeffects calf mda.lv2 lsp-plugins-lv2 mda.lv2 yelp zam-plugins-lv2 guvcview gimp shortwave yt-dlp \
-    niri xdg-desktop-portal-gnome xwayland-satellite
+    niri xdg-desktop-portal-gnome xwayland-satellite tela-circle-icon-theme-all wiremix impala
 
 git clone https://aur.archlinux.org/paru.git 
 cd paru
 makepkg -si
 
-paru -S dragon-drop hyprland-per-window-layout ianny clipvault tofi zen-browser-bin kora-icon-theme
+paru -S dragon-drop ianny clipvault tofi zen-browser-bin
 
 sudo pacman -S ccls ninja cmake lua-language-server lldb delve docker docker-compose docker-buildx cppcheck mitmproxy neovide stylua meson postgresql mariadb \
     tree-sitter-cli bash-language-server just
