@@ -216,7 +216,7 @@
         ],
     },
     "network#speedpc": {
-        "interface": "enp*",
+        "interface": "br*",
         "interval": 1,
         "format": "{ifname}",
         "format-wifi": "{icon} {essid}  {bandwidthUpBytes:>9}  {bandwidthDownBytes:>9}",
