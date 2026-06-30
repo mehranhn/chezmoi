@@ -31,7 +31,7 @@ sudo pacman -Sy playerctl pavucontrol htop qt5ct qt6ct imv qbittorrent proxychai
     noto-fonts-cjk noto-fonts-emoji noto-fonts ttf-sourcecodepro-nerd ttf-firacode-nerd ttf-iosevka-nerd \
     hyprland hyprsunset hypridle hyprcursor hyprpaper hyprlock hyprland-qt-support hyprpicker hyprpolkitagent hyprutils hyprshot waybar \
     xdg-desktop-portal-hyprland easyeffects calf mda.lv2 lsp-plugins-lv2 mda.lv2 yelp zam-plugins-lv2 guvcview gimp shortwave yt-dlp \
-    niri xdg-desktop-portal-gnome xwayland-satellite tela-circle-icon-theme-all wiremix impala
+    niri xdg-desktop-portal-gnome xwayland-satellite tela-circle-icon-theme-all wiremix impala imagemagick gammastep
 
 git clone https://aur.archlinux.org/paru.git 
 cd paru
