@@ -33,7 +33,10 @@
         }
     },
     "niri/language": {
-        "format": "{long}"
+        "format": "{}",
+        "format-en-colemak": "🇺🇸",
+        "format-en": "🇬🇧",
+        "format-fa": "🇮🇷",
     },
     "niri/window": {
         "format": "  {title}",

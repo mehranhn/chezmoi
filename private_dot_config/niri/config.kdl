@@ -186,14 +186,14 @@ spawn-at-startup "hyprpaper"
 spawn-sh-at-startup "swayidle -C ~/.config/swayidle/config-niri"
 spawn-at-startup "hyprsunset"
 spawn-at-startup "gammastep-indicator" "-r" "-l" "35.73001482117079:51.307652033138496"
-spawn-sh-at-startup "dunst ~/.config/dunst/dunstrc"
+// spawn-sh-at-startup "dunst ~/.config/dunst/dunstrc"
 spawn-at-startup "udiskie"
 spawn-at-startup "foot" "--server"
 spawn-at-startup "wl-paste" "--watch" "clipvault" "store"
 spawn-at-startup "/usr/lib/hyprpolkitagent/hyprpolkitagent"
 spawn-at-startup "easyeffects" "--gapplication-service"
-spawn-at-startup "nm-applet"
-spawn-at-startup "blueman"
+// spawn-at-startup "nm-applet"
+// spawn-at-startup "blueman"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -245,7 +245,7 @@ animations {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 4
     clip-to-geometry true
 }
 
@@ -360,6 +360,20 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id="footclient"
+    match app-id="Mnvim"
+    match app-id="Mbtop"
+    match app-id="Myazi"
+    match app-id="Mncmpcpp"
+    match app-id="Mmixer"
+
+    background-effect {
+        blur true
+        xray true
+    }
+}
+
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -394,6 +408,22 @@ binds {
     Super+XF86AudioRaiseVolume hotkey-overlay-title=null allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SOURCE@" "5%+"; }
     Super+XF86AudioLowerVolume hotkey-overlay-title=null allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SOURCE@" "5%-"; }
 
+    // sound and microphone ashell
+    // Alt+F1 hotkey-overlay-title=null repeat=false allow-when-locked=true { spawn "ashell" "msg" "volume-toggle-mute"; }
+    // Alt+F2 hotkey-overlay-title=null allow-when-locked=true { spawn "ashell" "msg" "volume-down"; }
+    // Alt+F3 hotkey-overlay-title=null allow-when-locked=true { spawn "ashell" "msg" "volume-up"; }
+    // Super+F1 hotkey-overlay-title=null repeat=false allow-when-locked=true { spawn "ashell" "msg" "microphone-toggle-mute"; }
+    // Super+F2 hotkey-overlay-title=null allow-when-locked=true { spawn "ashell" "msg" "microphone-down"; }
+    // Super+F3 hotkey-overlay-title=null allow-when-locked=true { spawn "ashell" "msg" "microphone-up"; }
+
+    // XF86AudioRaiseVolume hotkey-overlay-title=null allow-when-locked=true { spawn "ashell" "msg" "volume-up"; }
+    // XF86AudioLowerVolume hotkey-overlay-title=null allow-when-locked=true { spawn "ashell" "msg" "volume-down"; }
+    // XF86AudioMute hotkey-overlay-title=null repeat=false allow-when-locked=true { spawn "ashell" "msg" "volume-toggle-mute"; }
+    // XF86AudioMicMute hotkey-overlay-title=null repeat=false allow-when-locked=true { spawn "ashell" "msg" "microphone-toggle-mute"; }
+    // Super+XF86AudioMute hotkey-overlay-title=null repeat=false allow-when-locked=true { spawn "ashell" "msg" "microphone-toggle-mute"; }
+    // Super+XF86AudioRaiseVolume hotkey-overlay-title=null allow-when-locked=true { spawn "ashell" "msg" "microphone-up"; }
+    // Super+XF86AudioLowerVolume hotkey-overlay-title=null allow-when-locked=true { spawn "ashell" "msg" "microphone-down"; }
+
     // player
     XF86AudioPlay repeat=false allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioStop repeat=false allow-when-locked=true { spawn-sh "playerctl stop"; }
@@ -401,8 +431,12 @@ binds {
     XF86AudioNext repeat=false allow-when-locked=true { spawn-sh "playerctl next"; }
 
     // brightness
-    XF86MonBrightnessUp  cooldown-ms=100 allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
-    XF86MonBrightnessDown cooldown-ms=100 allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
+    // XF86MonBrightnessUp  cooldown-ms=100 allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
+    // XF86MonBrightnessDown cooldown-ms=100 allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
+
+    // brightness ashell
+    XF86MonBrightnessUp  cooldown-ms=100 allow-when-locked=true { spawn "ashell" "msg" "brightness-up"; }
+    XF86MonBrightnessDown cooldown-ms=100 allow-when-locked=true { spawn "ashell" "msg" "brightness-down"; }
 
     Mod+O repeat=false { toggle-overview; }
 
@@ -599,7 +633,8 @@ binds {
     // Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle Scratchpad: pavucontrol" { spawn "nscratch" "-a" "-m" "-id" "org.pulseaudio.pavucontrol" "-s" "pavucontrol -t 4"; }
     Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle Scratchpad: " { spawn "nscratch" "-a" "-m" "-id" "Mmixer" "-s" "footclient -a Mmixer -T wiremix -L wiremix -v output"; }
 
-    Mod+Grave repeat=false hotkey-overlay-title=null { spawn "killall" "-SIGUSR1" "waybar"; }
+    // Mod+Grave repeat=false hotkey-overlay-title=null { spawn "killall" "-SIGUSR1" "waybar"; }
+    Mod+Grave repeat=false hotkey-overlay-title=null { spawn "ashell" "msg" "toggle-visibility"; }
 
     Mod+Shift+Q repeat=false hotkey-overlay-title="Shutdown Menu" { spawn "tofi-shutdown-menu"; }
     Mod+Shift+Ctrl+Q repeat=false hotkey-overlay-title="Quit" { quit; }

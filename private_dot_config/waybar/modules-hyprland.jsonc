@@ -34,7 +34,10 @@
         }
     },
     "hyprland/language": {
-        "format": "{long}"
+        "format": "{}",
+        "format-en-colemak": "🇺🇸",
+        "format-en": "🇬🇧",
+        "format-fa": "🇮🇷",
     },
     "hyprland/submap": {
         "format": "<span style=\"italic\">  {}</span>",
