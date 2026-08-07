@@ -633,8 +633,8 @@ binds {
     // Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle Scratchpad: pavucontrol" { spawn "nscratch" "-a" "-m" "-id" "org.pulseaudio.pavucontrol" "-s" "pavucontrol -t 4"; }
     Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle Scratchpad: " { spawn "nscratch" "-a" "-m" "-id" "Mmixer" "-s" "footclient -a Mmixer -T wiremix -L wiremix -v output"; }
 
-    // Mod+Grave repeat=false hotkey-overlay-title=null { spawn "killall" "-SIGUSR1" "waybar"; }
-    Mod+Grave repeat=false hotkey-overlay-title=null { spawn "ashell" "msg" "toggle-visibility"; }
+    Mod+Grave repeat=false hotkey-overlay-title=null { spawn "killall" "-SIGUSR1" "waybar"; }
+    // Mod+Grave repeat=false hotkey-overlay-title=null { spawn "ashell" "msg" "toggle-visibility"; }
 
     Mod+Shift+Q repeat=false hotkey-overlay-title="Shutdown Menu" { spawn "tofi-shutdown-menu"; }
     Mod+Shift+Ctrl+Q repeat=false hotkey-overlay-title="Quit" { quit; }
