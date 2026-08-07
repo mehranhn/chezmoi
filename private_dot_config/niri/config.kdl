@@ -271,7 +271,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="com.github.iwalton3.jellyfin-media-player"
+    match app-id="org.jellyfin.JellyfinDesktop"
 
     open-fullscreen true
 }
