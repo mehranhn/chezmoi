@@ -12,7 +12,7 @@
         "format": "{temperatureC}°C {icon}",
         "format-icons": [
             "󰈸"
-        ],
+        ]
     },
     "backlight": {
         "align": 0,
@@ -38,7 +38,10 @@
     "backlight#2": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
-        "format-icons": ["", ""]
+        "format-icons": [
+            "",
+            ""
+        ]
     },
     "battery": {
         //"interval": 5,
@@ -60,7 +63,17 @@
         "format-full": "{icon} Full",
         "format-alt": "{icon} {time}",
         "format-icons": [
-            "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
         ],
         "format-time": "{H}h {M}min",
         "tooltip": true,
@@ -95,13 +108,11 @@
         "format-alt": "{:%A  |  %H:%M  |  %e %B}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
-
     "clock#3": {
         //"format": "{:%I:%M %p - %d/%b}", //for AM/PM
         "format": "{:%H:%M - %d/%b}", // 24H
         "tooltip": false
     },
-
     "clock#4": {
         "interval": 60,
         //"format": "{:%B | %a %d, %Y | %I:%M %p}", // AM PM format
@@ -109,7 +120,6 @@
         "format-alt": "{:%a %b %d, %G}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
     },
-
     "clock#5": {
         //"format": "{:%A, %I:%M %P}", // AM PM format
         "format": "{:%a %d | %H:%M}", // 24H
@@ -127,7 +137,7 @@
             "<span color='#ffffa5'>▅</span>", // yellow
             "<span color='#ffffa5'>▆</span>", // yellow
             "<span color='#ff9977'>▇</span>", // orange
-            "<span color='#dd532e'>█</span>"  // red
+            "<span color='#dd532e'>█</span>" // red
         ],
     },
     "cpu#small": {
@@ -212,7 +222,11 @@
         "tooltip-format-disconnected": "󰌙 Disconnected",
         "max-length": 30,
         "format-icons": [
-            "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
         ],
     },
     "network#speedpc": {
@@ -228,7 +242,11 @@
         "tooltip-format-ethernet": "{ifname} {ipaddr} 󰌘",
         "tooltip-format-disconnected": "󰌙 Disconnected",
         "format-icons": [
-            "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
         ]
     },
     "network#speedlaptop": {
@@ -244,7 +262,11 @@
         "tooltip-format-ethernet": "{ifname} {ipaddr} 󰌘",
         "tooltip-format-disconnected": "󰌙 Disconnected",
         "format-icons": [
-            "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
         ]
     },
     "pulseaudio": {
@@ -253,7 +275,11 @@
         "format-bluetooth-muted": " ",
         "format-muted": "",
         "format-icons": {
-            "default": ["", " ", " "]
+            "default": [
+                "",
+                " ",
+                " "
+            ]
         },
         "scroll-step": 5.0,
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
@@ -263,7 +289,6 @@
         "tooltip-format": "{icon} {desc} | {volume}%",
         "smooth-scrolling-threshold": 1,
     },
-
     "pulseaudio#source": {
         "format": "{format_source}",
         "format-source": " {volume}%",
@@ -285,7 +310,11 @@
         "on-scroll-down": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-",
         "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
         "format-icons": {
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         }
     },
     "wireplumber#source": {
@@ -324,14 +353,44 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "privacy": {
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true
+            },
+            {
+                "type": "location"
+            }
+        ],
+        "ignore-monitor": true,
+        "ignore": [
+            {
+                "type": "audio-in",
+                "name": "cava"
+            },
+            {
+                "type": "screenshare",
+                "name": "obs"
+            }
+        ]
     }
 }
