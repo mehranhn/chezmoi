@@ -193,7 +193,7 @@ spawn-at-startup "wl-paste" "--watch" "clipvault" "store"
 spawn-at-startup "/usr/lib/hyprpolkitagent/hyprpolkitagent"
 spawn-at-startup "easyeffects" "--gapplication-service"
 // spawn-at-startup "nm-applet"
-// spawn-at-startup "blueman"
+spawn-at-startup "blueman-applet"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
