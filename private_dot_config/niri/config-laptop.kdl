@@ -73,6 +73,12 @@ window-rule {
 }
 
 window-rule {
+    match app-id="org.mozilla.Thunderbird"
+
+    open-on-workspace "l1"
+}
+
+window-rule {
     match app-id="zen"
 
     open-on-workspace "l2"

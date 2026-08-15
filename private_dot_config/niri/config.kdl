@@ -267,6 +267,7 @@ window-rule {
     match app-id="org.qbittorrent.qBittorrent" title="^qBittorrent.*"
     match app-id="com.obsproject.Studio"
     match app-id="psysonic-bin"
+    match app-id="org.mozilla.Thunderbird"
 
     open-maximized-to-edges true
 }
