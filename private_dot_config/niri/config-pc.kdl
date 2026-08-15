@@ -134,6 +134,12 @@ window-rule {
 }
 
 window-rule {
+    match app-id="psysonic-bin"
+
+    open-on-workspace "r4"
+}
+
+window-rule {
     match app-id="virt-manager"
 
     open-on-workspace "r5"
