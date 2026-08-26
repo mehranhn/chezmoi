@@ -184,7 +184,7 @@ layout {
 spawn-at-startup "/usr/lib/xdg-desktop-portal" "-r"
 spawn-at-startup "hyprpaper"
 spawn-sh-at-startup "swayidle -C ~/.config/swayidle/config-niri"
-spawn-at-startup "hyprsunset"
+// spawn-at-startup "hyprsunset"
 spawn-at-startup "gammastep-indicator" "-r" "-l" "35.73001482117079:51.307652033138496"
 // spawn-sh-at-startup "dunst ~/.config/dunst/dunstrc"
 spawn-at-startup "udiskie"
@@ -392,7 +392,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Q repeat=false hotkey-overlay-title="Open a Terminal: foot" { spawn "footclient"; }
-    Alt+Space repeat=false hotkey-overlay-title="Run an Application: tofi" { spawn "tofi-drun" "--drun-launch" "true"; }
+    Alt+Space repeat=false hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
     // sound and microphone
     Alt+F1 hotkey-overlay-title=null repeat=false allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
@@ -621,7 +621,7 @@ binds {
     Mod+Shift+BackSlash repeat=false hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+Ctrl+Shift+BackSlash repeat=false hotkey-overlay-title="Trigger Idle" { spawn "killall" "-SIGUSR1" "swayidle"; }
 
-    Mod+Shift+V repeat=false hotkey-overlay-title="Clipboard History" { spawn-sh "clipvault list | tofi | clipvault get | wl-copy"; }
+    Mod+Shift+V repeat=false hotkey-overlay-title="Clipboard History" { spawn-sh "clipvault list | fuzzel -d -f Hack-Regular -p 'clipvault: ' | clipvault get | wl-copy"; }
 
     // exec or focus
     Mod+P repeat=false hotkey-overlay-title=null { spawn "niri-exec-or-focus" "Myazi" "footclient" "-a" "Myazi" "-T" "yazi" "-L" "yazi"; }
@@ -638,7 +638,7 @@ binds {
     Mod+Grave repeat=false hotkey-overlay-title=null { spawn "killall" "-SIGUSR1" "waybar"; }
     // Mod+Grave repeat=false hotkey-overlay-title=null { spawn "ashell" "msg" "toggle-visibility"; }
 
-    Mod+Shift+Q repeat=false hotkey-overlay-title="Shutdown Menu" { spawn "tofi-shutdown-menu"; }
+    Mod+Shift+Q repeat=false hotkey-overlay-title="Shutdown Menu" { spawn "fuzzel-shutdown-menu"; }
     Mod+Shift+Ctrl+Q repeat=false hotkey-overlay-title="Quit" { quit; }
 
 }

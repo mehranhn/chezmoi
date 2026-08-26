@@ -2,4 +2,4 @@
 output_name=*
 max_fps=30
 chooser_type=dmenu
-chooser_cmd=tofi --prompt-text Display
+chooser_cmd=fuzzel -p Display
