@@ -33,7 +33,7 @@ play = [
 ]
 
 pdff = [
-    { run = 'zathura "$@"', desc = "zathura", orphan = true, block = false, for = "unix" },
+    { run = 'zathura %s', desc = "zathura", orphan = true, block = false, for = "unix" },
 ]
 
 add-sub = [
