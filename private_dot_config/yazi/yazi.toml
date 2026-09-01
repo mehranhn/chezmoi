@@ -10,7 +10,7 @@ cache_dir = "~/.cache/yazi/thumbnails"
 
 [plugin]
 prepend_fetchers = [
-    { group = "mime", id = "mime", if = "!(mime|dummy)", url = "*", run = "mime-ext", prio = "high" },
+    # { group = "mime", id = "mime", if = "!(mime|dummy)", url = "*", run = "mime-ext", prio = "high" },
     { group = "git", id = "git", url = "*", run = "git" },
     { group = "git", id = "git", url = "*/", run = "git" },
 ]

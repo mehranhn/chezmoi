@@ -27,7 +27,7 @@ prepend_keymap = [
 	# # Operation
 	# { on = "C",         run = "unyank",                      desc = "Cancel the yank status" },
 	{ on = "K",     run = "hidden toggle", desc = "Toggle the visibility of hidden files" },
-	{ on = "<C-o>", run = '''shell 'dragon-drop -x -A -T "$@"' --confirm''', desc = "Dragon Drop" },
+	{ on = "<C-o>", run = '''shell 'dragon-drop -x -A -T %s' --confirm''', desc = "Dragon Drop" },
 	{ on = "V",     run = '''shell 'if [ "$#" -lt 2 ]; then vidir; else printf "%s\n" "$@" | vidir -; fi' --block --confirm''', desc = "Bulk Rename" },
 
     # Comepression
