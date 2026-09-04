@@ -1,9 +1,4 @@
 device_options = {
-    monitors_workspace_offset = {
-        ["DP-1"] = 0,
-        ["HDMI-A-1"] = 10,
-    },
-    monitors_workspace_offset_unknown = 20,
     win_workspaces = {
         yazi = "3",
         nvim = "4",
@@ -21,7 +16,7 @@ device_options = {
 }
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("waybar -c ~/.config/waybar/config-pc.jsonc")
+    hl.exec_cmd("uwsm app -- waybar -c ~/.config/waybar/config-pc.jsonc")
 end)
 
 hl.config({ cursor = { default_monitor = "DP-1" } })

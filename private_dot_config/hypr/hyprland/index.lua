@@ -1,0 +1,8 @@
+-- require("hyprland.env")
+require("hyprland.config")
+require("hyprland.bind")
+require("hyprland.animation")
+require("hyprland.autostart")
+require("hyprland.smart-gaps")
+require("hyprland.window")
+require("hyprland.workspace")

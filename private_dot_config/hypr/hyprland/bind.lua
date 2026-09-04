@@ -22,7 +22,8 @@ hl.bind("SUPER + SHIFT + 8", hl.dsp.window.move({ workspace = "r~8" }))
 hl.bind("SUPER + SHIFT + 9", hl.dsp.window.move({ workspace = "r~9" }))
 hl.bind("SUPER + SHIFT + 0", hl.dsp.window.move({ workspace = "r~10" }))
 
-hl.bind("SUPER + SHIFT + Q", hl.dsp.exec_raw("fuzzel-shutdown-menu"))
+-- hl.bind("SUPER + SHIFT + Q", hl.dsp.exec_raw("fuzzel-shutdown-menu"))
+-- hl.bind("SUPER + SHIFT + CTRL + Q", hl.dsp.exec_raw("uwsm stop"))
 
 hl.bind("SUPER + W", hl.dsp.focus({ monitor = "+1" }))
 hl.bind("SUPER + SHIFT + W", hl.dsp.window.move({ monitor = "+1" }))
@@ -40,68 +41,120 @@ hl.bind("SUPER + SHIFT + Right", hl.dsp.window.move({ direction = "r" }))
 hl.bind("SUPER + S", hl.dsp.window.cycle_next({ next = false, tiled = true }))
 hl.bind("SUPER + T", hl.dsp.window.cycle_next({ next = true, tiled = true }))
 hl.bind("SUPER + R", hl.dsp.focus({ last = true }))
-hl.bind("SUPER + A", hl.dsp.window.cycle_next({ floating = true }))
+hl.bind("SUPER + A", function ()
+    hl.dispatch(hl.dsp.window.cycle_next({ floating = not hl.get_active_window().floating }))
+end)
 
-hl.bind("SUPER + H", utils.layout_bind({
-    master = hl.dsp.layout("focusmaster master"),
-    scrolling = hl.dsp.layout("focus l"),
-}))
-hl.bind("SUPER + N", utils.layout_bind({
-    master = hl.dsp.layout("cyclenext"),
-    scrolling = hl.dsp.layout("focus d"),
-}))
-hl.bind("SUPER + E", utils.layout_bind({
-    master = hl.dsp.layout("cycleprev"),
-    scrolling = hl.dsp.layout("focus u"),
-}))
-hl.bind("SUPER + I", utils.layout_bind({
-    master = hl.dsp.layout("focusmaster auto"),
-    scrolling = hl.dsp.layout("focus r"),
-}))
+hl.bind(
+    "SUPER + H",
+    utils.layout_bind({
+        master = hl.dsp.layout("focusmaster master"),
+        scrolling = hl.dsp.layout("focus l"),
+    }),
+    { repeating = true }
+)
+hl.bind(
+    "SUPER + N",
+    utils.layout_bind({
+        master = hl.dsp.layout("cyclenext"),
+        scrolling = hl.dsp.layout("focus d"),
+    }),
+    { repeating = true }
+)
+hl.bind(
+    "SUPER + E",
+    utils.layout_bind({
+        master = hl.dsp.layout("cycleprev"),
+        scrolling = hl.dsp.layout("focus u"),
+    }),
+    { repeating = true }
+)
+hl.bind(
+    "SUPER + I",
+    utils.layout_bind({
+        master = hl.dsp.layout("focusmaster auto"),
+        scrolling = hl.dsp.layout("focus r"),
+    }),
+    { repeating = true }
+)
 
-hl.bind("SUPER + SHIFT + H", utils.layout_bind({
-    master = hl.dsp.layout("swapwithmaster master"),
-    scrolling = hl.dsp.layout("swapcol l"),
-}))
-hl.bind("SUPER + SHIFT + N", utils.layout_bind({
-    master = hl.dsp.layout("swapnext"),
-    scrolling = hl.dsp.layout("swapcol d"),
-}))
-hl.bind("SUPER + SHIFT + N", utils.layout_bind({
-    master = hl.dsp.layout("swapprev"),
-    scrolling = hl.dsp.layout("swapcol u"),
-}))
-hl.bind("SUPER + SHIFT + I", utils.layout_bind({
-    master = hl.dsp.layout("swapwithmaster child"),
-    scrolling = hl.dsp.layout("swapcol r"),
-}))
+hl.bind(
+    "SUPER + SHIFT + H",
+    utils.layout_bind({
+        master = hl.dsp.layout("swapwithmaster master"),
+        scrolling = hl.dsp.layout("swapcol l"),
+    }),
+    { repeating = true }
+)
+hl.bind(
+    "SUPER + SHIFT + N",
+    utils.layout_bind({
+        master = hl.dsp.layout("swapnext"),
+        scrolling = hl.dsp.layout("swapcol d"),
+    }),
+    { repeating = true }
+)
+hl.bind(
+    "SUPER + SHIFT + N",
+    utils.layout_bind({
+        master = hl.dsp.layout("swapprev"),
+        scrolling = hl.dsp.layout("swapcol u"),
+    }),
+    { repeating = true }
+)
+hl.bind(
+    "SUPER + SHIFT + I",
+    utils.layout_bind({
+        master = hl.dsp.layout("swapwithmaster child"),
+        scrolling = hl.dsp.layout("swapcol r"),
+    }),
+    { repeating = true }
+)
 
-hl.bind("SUPER + MINUS", utils.layout_bind({
-    master = hl.dsp.layout("mfact -0.05"),
-    scrolling = hl.dsp.layout("colresize -0.05"),
-}))
-hl.bind("SUPER + EQUAL", utils.layout_bind({
-    master = hl.dsp.layout("mfact +0.05"),
-    scrolling = hl.dsp.layout("colresize +0.05"),
-}))
+hl.bind(
+    "SUPER + MINUS",
+    utils.layout_bind({
+        master = hl.dsp.layout("mfact -0.05"),
+        scrolling = hl.dsp.layout("colresize -0.05"),
+    })
+)
+hl.bind(
+    "SUPER + EQUAL",
+    utils.layout_bind({
+        master = hl.dsp.layout("mfact +0.05"),
+        scrolling = hl.dsp.layout("colresize +0.05"),
+    })
+)
 
-hl.bind("SUPER + COMMA", utils.layout_bind({
-    master = hl.dsp.layout("addmaster"),
-    scrolling = hl.dsp.layout("consume"),
-}))
-hl.bind("SUPER + PERIOD", utils.layout_bind({
-    master = hl.dsp.layout("removemaster"),
-    scrolling = hl.dsp.layout("expel"),
-}))
+hl.bind(
+    "SUPER + COMMA",
+    utils.layout_bind({
+        master = hl.dsp.layout("addmaster"),
+        scrolling = hl.dsp.layout("consume"),
+    })
+)
+hl.bind(
+    "SUPER + PERIOD",
+    utils.layout_bind({
+        master = hl.dsp.layout("removemaster"),
+        scrolling = hl.dsp.layout("expel"),
+    })
+)
 
-hl.bind("SUPER + SHIFT + COMMA", utils.layout_bind({
-    master = hl.dsp.layout("orientationprev"),
-    scrolling = hl.dsp.layout("consume_or_expel prev"),
-}))
-hl.bind("SUPER + SHIFT + PERIOD", utils.layout_bind({
-    master = hl.dsp.layout("orientationnext"),
-    scrolling = hl.dsp.layout("consume_or_expel next"),
-}))
+hl.bind(
+    "SUPER + SHIFT + COMMA",
+    utils.layout_bind({
+        master = hl.dsp.layout("orientationprev"),
+        scrolling = hl.dsp.layout("consume_or_expel prev"),
+    })
+)
+hl.bind(
+    "SUPER + SHIFT + PERIOD",
+    utils.layout_bind({
+        master = hl.dsp.layout("orientationnext"),
+        scrolling = hl.dsp.layout("consume_or_expel next"),
+    })
+)
 
 hl.bind("SUPER + SHIFT + CTRL + H", hl.dsp.group.move_window({ forward = false }))
 hl.bind("SUPER + SHIFT + CTRL + I", hl.dsp.group.move_window({ forward = true }))
@@ -119,12 +172,12 @@ hl.bind("SUPER + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", act
 hl.bind("SUPER + SHIFT + P", hl.dsp.window.pin({ action = "toggle" }))
 hl.bind("SUPER + SHIFT + D", hl.dsp.group.toggle())
 hl.bind("SUPER + GRAVE", hl.dsp.exec_raw("killall -SIGUSR1 waybar"))
-hl.bind("SUPER + SHIFT + BACKSLASH", hl.dsp.exec_raw("hyprlock"))
-hl.bind("SUPER + SHIFT + CTRL + BACKSLASH", function()
+hl.bind("SUPER + BACKSLASH", hl.dsp.exec_raw("hyprlock"))
+hl.bind("SUPER + SHIFT + BACKSLASH", function()
     hl.timer(function()
         hl.dispatch(hl.dsp.force_idle(3600))
-    end, { timeout = 500, type = "oneshot" })
-end)
+    end, { timeout = 100, type = "oneshot" })
+end, { release = true })
 hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("clipvault list | fuzzel -d -p 'clipvault: ' | clipvault get | wl-copy"))
 hl.bind("SUPER + SHIFT + J", hl.dsp.exec_raw("hyprpicker -a -l"))
 
@@ -216,6 +269,16 @@ hl.define_submap("screenshotfreeze", function()
     hl.bind("catchall", hl.dsp.submap("reset"))
 end)
 
+hl.bind("SUPER + SHIFT + Q", hl.dsp.submap("shutdown-menu"))
+
+hl.define_submap("shutdown-menu", function ()
+    hl.bind("Q", hl.dsp.exec_raw("hyprshutdown -t 'Shutting down...' --post-cmd 'systemctl poweroff'"))
+    hl.bind("R", hl.dsp.exec_raw("hyprshutdown -t 'Restarting...' --post-cmd 'systemctl reboot'"))
+    hl.bind("L", hl.dsp.exec_raw("hyprshutdown -t 'Logouting...' --post-cmd 'uwsm stop'"))
+
+    hl.bind("ESCAPE", hl.dsp.submap("reset"))
+end)
+
 hl.bind("ALT + F1", hl.dsp.exec_raw("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 hl.bind(
     "ALT + F2",
@@ -227,14 +290,14 @@ hl.bind(
     hl.dsp.exec_raw("wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"),
     { locked = true, repeating = true }
 )
-hl.bind("ALT + F1", hl.dsp.exec_raw("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
+hl.bind("SUPER + F1", hl.dsp.exec_raw("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
 hl.bind(
-    "ALT + F2",
+    "SUPER + F2",
     hl.dsp.exec_raw("wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%-"),
     { locked = true, repeating = true }
 )
 hl.bind(
-    "ALT + F3",
+    "SUPER + F3",
     hl.dsp.exec_raw("wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%+"),
     { locked = true, repeating = true }
 )
@@ -251,11 +314,7 @@ hl.bind(
     { locked = true, repeating = true }
 )
 hl.bind("XF86AudioMicMute", hl.dsp.exec_raw("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
-hl.bind(
-    "SUPER + XF86AudioMute",
-    hl.dsp.exec_raw("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
-    { locked = true }
-)
+hl.bind("SUPER + XF86AudioMute", hl.dsp.exec_raw("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
 hl.bind(
     "SUPER + XF86AudioLowerVolume",
     hl.dsp.exec_raw("wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%-"),
@@ -267,18 +326,18 @@ hl.bind(
     { locked = true, repeating = true }
 )
 
-hl.bind("XF86AudioPrev", hl.dsp.exec_raw("playerctl previous"))
-hl.bind("XF86AudioPlay", hl.dsp.exec_raw("playerctl play-pause"))
-hl.bind("XF86AudioStop", hl.dsp.exec_raw("playerctl stop"))
-hl.bind("XF86AudioNext", hl.dsp.exec_raw("playerctl next"))
+hl.bind("XF86AudioPrev", hl.dsp.exec_raw("playerctl previous"), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_raw("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioStop", hl.dsp.exec_raw("playerctl stop"), { locked = true })
+hl.bind("XF86AudioNext", hl.dsp.exec_raw("playerctl next"), { locked = true })
+
+-- focus or launch
+hl.bind("SUPER + P", utils.focus_or_launch("Myazi", "footclient -a Myazi -T yazi -L yazi"))
+hl.bind("SUPER + C", utils.focus_or_launch("Mnvim", "footclient -a Mnvim -T neovim -L zellij a -c dev"))
+hl.bind("SUPER + B", utils.focus_or_launch("zen", "zen-browser"))
 
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag())
 hl.bind("SUPER + mouse:273", function()
     hl.dispatch(hl.dsp.cursor.move_to_corner({ corner = 1 }))
     hl.dispatch(hl.dsp.window.resize())
 end)
-
--- focus or launch
-hl.bind("SUPER + P", utils.focus_or_launch("Myazi", "footclient -a Myazi -T yazi -L yazi"))
-hl.bind("SUPER + C", utils.focus_or_launch("Mnvim", "footclient -a Mnvim -T neovim -L zellij a -c dev"))
-hl.bind("SUPER + B", utils.focus_or_launch("zen", "zen-browser"))

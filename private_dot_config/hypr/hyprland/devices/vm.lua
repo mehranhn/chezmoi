@@ -1,8 +1,4 @@
 device_options = {
-    monitors_workspace_offset = {
-        ["Virtual-1"] = 0,
-    },
-    monitors_workspace_offset_unknown = 10,
     win_workspaces = {
         yazi = "3",
         nvim = "4",
@@ -20,9 +16,20 @@ device_options = {
 }
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("waybar -c ~/.config/waybar/config-pc.jsonc")
+    hl.exec_cmd("uwsm app -- waybar -c ~/.config/waybar/config-pc.jsonc")
 end)
 
 hl.config({ cursor = { default_monitor = "Virtual-1" } })
 hl.monitor({ output = "Virtual-1", mode = "preferred", position = "0x0", scale = 1 })
 hl.monitor({ output = "", mode = "preferred", position = "auto-right", scale = 1 })
+
+hl.workspace_rule({ workspace = "1", monitor = "Virtual-1", persistent = true, layout = "master", default = true })
+hl.workspace_rule({ workspace = "2", monitor = "Virtual-1", persistent = true, layout = "scrolling" })
+hl.workspace_rule({ workspace = "3", monitor = "Virtual-1", persistent = true, layout = "scrolling" })
+hl.workspace_rule({ workspace = "4", monitor = "Virtual-1", persistent = true, layout = "scrolling" })
+hl.workspace_rule({ workspace = "5", monitor = "Virtual-1", persistent = true, layout = "master" })
+hl.workspace_rule({ workspace = "6", monitor = "Virtual-1", persistent = true, layout = "master" })
+hl.workspace_rule({ workspace = "7", monitor = "Virtual-1", persistent = true, layout = "scrolling" })
+hl.workspace_rule({ workspace = "8", monitor = "Virtual-1", persistent = true, layout = "scrolling" })
+hl.workspace_rule({ workspace = "9", monitor = "Virtual-1", persistent = true, layout = "scrolling" })
+hl.workspace_rule({ workspace = "10", monitor = "Virtual-1", persistent = true, layout = "master" })

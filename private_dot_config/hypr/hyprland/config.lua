@@ -11,17 +11,15 @@ hl.config({
     decoration = {
         blur = {
             enabled = true,
-            size = 8,
-            passes = 3,
-            new_optimizations = true,
-            ignore_opacity = true,
+            -- size = 8,
+            passes = 1,
             -- variant = "kavwase",
-            xray = false,
+            -- xray = false,
             popups = true,
         },
         shadow = {
             enabled = false,
-        }
+        },
     },
     input = {
         kb_model = "pc104",
