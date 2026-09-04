@@ -251,9 +251,22 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
+    match app-id="footclient"
+    match app-id="Mbtop"
+    match app-id="Mmixer"
+
     geometry-corner-radius 4
     clip-to-geometry true
+}
+
+layer-rule {
+    match namespace="launcher"
+
+    background-effect {
+        xray false
+        blur true
+    }
 }
 
 layer-rule {
@@ -331,6 +344,16 @@ window-rule {
     open-floating true
     default-column-width { proportion 0.95; }
     default-window-height { proportion 0.90; }
+}
+
+window-rule {
+    match app-id="Mbtop"
+    match app-id="Mmixer"
+
+    background-effect {
+        xray false
+        blur true
+    }
 }
 
 window-rule {
