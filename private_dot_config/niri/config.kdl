@@ -180,19 +180,25 @@ layout {
     }
 }
 
+blur {
+    passes 2
+    // offset 3.0
+    // noise 0.02
+    // saturation 1.5
+}
+
 // spawn-at-startup "mpd"
 spawn-at-startup "/usr/lib/xdg-desktop-portal" "-r"
-spawn-at-startup "hyprpaper"
+// spawn-at-startup "hyprpaper" // hyprpaper.service
 spawn-sh-at-startup "swayidle -C ~/.config/swayidle/config-niri"
-// spawn-at-startup "hyprsunset"
 spawn-at-startup "gammastep-indicator" "-r" "-l" "35.73001482117079:51.307652033138496"
-// spawn-sh-at-startup "dunst ~/.config/dunst/dunstrc"
+spawn-sh-at-startup "dunst ~/.config/dunst/dunstrc" // dunst.service
 spawn-at-startup "udiskie"
-spawn-at-startup "foot" "--server"
+// spawn-at-startup "foot" "-s" // foot-server.service
 spawn-at-startup "wl-paste" "--watch" "clipvault" "store"
-spawn-at-startup "/usr/lib/hyprpolkitagent/hyprpolkitagent"
+// spawn-at-startup "/usr/lib/hyprpolkitagent/hyprpolkitagent" // hyprpolkitagent.service
 spawn-at-startup "easyeffects" "--gapplication-service"
-// spawn-at-startup "nm-applet"
+spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
 
 hotkey-overlay {
@@ -223,7 +229,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    // slowdown 0.80
 
     workspace-switch {
         off
@@ -232,9 +238,10 @@ animations {
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id="qtpass"
 
     block-out-from "screen-capture"
 
@@ -304,6 +311,10 @@ window-rule {
 
     open-floating true
     draw-border-with-background false
+    background-effect {
+        xray false
+        blur true
+    }
 }
 
 window-rule {
@@ -324,14 +335,6 @@ window-rule {
 
 window-rule {
     match app-id="org.pulseaudio.pavucontrol"
-
-    open-floating true
-    default-column-width { fixed 500; }
-    default-window-height { fixed 600; }
-    default-floating-position x=10 y=10 relative-to="bottom-right"
-}
-
-window-rule {
     match app-id="Mmixer"
 
     open-floating true
@@ -359,20 +362,6 @@ window-rule {
     tab-indicator {
         active-color "#f38ba8"
         inactive-color "#7d0d2d"
-    }
-}
-
-window-rule {
-    match app-id="footclient"
-    match app-id="Mnvim"
-    match app-id="Mbtop"
-    match app-id="Myazi"
-    match app-id="Mncmpcpp"
-    match app-id="Mmixer"
-
-    background-effect {
-        blur true
-        xray true
     }
 }
 
@@ -621,7 +610,7 @@ binds {
     Mod+Shift+BackSlash repeat=false hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Mod+Ctrl+Shift+BackSlash repeat=false hotkey-overlay-title="Trigger Idle" { spawn "killall" "-SIGUSR1" "swayidle"; }
 
-    Mod+Shift+V repeat=false hotkey-overlay-title="Clipboard History" { spawn-sh "clipvault list | fuzzel -d -f Hack-Regular -p 'clipvault: ' | clipvault get | wl-copy"; }
+    Mod+Shift+V repeat=false hotkey-overlay-title="Clipboard History" { spawn-sh "clipvault list | fuzzel -d -p 'clipvault: ' | clipvault get | wl-copy"; }
 
     // exec or focus
     Mod+P repeat=false hotkey-overlay-title=null { spawn "niri-exec-or-focus" "Myazi" "footclient" "-a" "Myazi" "-T" "yazi" "-L" "yazi"; }
@@ -631,9 +620,8 @@ binds {
 
     // scratchpads
     Mod+Shift+Semicolon repeat=false hotkey-overlay-title="Toggle Scratchpad: Mbtop" { spawn "nscratch" "-a" "-m" "-id" "Mbtop" "-s" "footclient -a Mbtop -T btop -L btop -p 0"; }
-    Mod+Shift+BracketLeft repeat=false hotkey-overlay-title="Toggle Scratchpad: ncmpcpp" { spawn "nscratch" "-a" "-m" "-id" "Mncmpcpp" "-s" "footclient -a Mncmpcpp -T ncmpcpp -L ncmpcpp"; }
-    // Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle Scratchpad: pavucontrol" { spawn "nscratch" "-a" "-m" "-id" "org.pulseaudio.pavucontrol" "-s" "pavucontrol -t 4"; }
-    Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle Scratchpad: " { spawn "nscratch" "-a" "-m" "-id" "Mmixer" "-s" "footclient -a Mmixer -T wiremix -L wiremix -v output"; }
+    Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle Scratchpad: Mmixer" { spawn "nscratch" "-a" "-m" "-id" "Mmixer" "-s" "footclient -a Mmixer -T wiremix -L wiremix -v output"; }
+    Mod+Shift+CTRL+Y repeat=false hotkey-overlay-title="Toggle Scratchpad: pavucontrol" { spawn "nscratch" "-a" "-m" "-id" "org.pulseaudio.pavucontrol" "-s" "pavucontrol -t 4"; }
 
     Mod+Grave repeat=false hotkey-overlay-title=null { spawn "killall" "-SIGUSR1" "waybar"; }
     // Mod+Grave repeat=false hotkey-overlay-title=null { spawn "ashell" "msg" "toggle-visibility"; }
